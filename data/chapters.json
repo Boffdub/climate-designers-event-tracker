@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Bay Area",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "climate-designers-bay-area",
+    "calendarApiId": "cal-AT4LbFFs7LZVphs"
+  },
+  {
+    "name": "Boston",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "BostonClimateDesigners",
+    "calendarApiId": "cal-zd15HKalCauKRjm"
+  },
+  {
+    "name": "Chicago",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "climatedesignerschicago",
+    "calendarApiId": "cal-d5WhdJZQGnlWIvx"
+  },
+  {
+    "name": "Los Angeles",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "ClimateDesignersLA",
+    "calendarApiId": "cal-NrQu55Jl3uFUEWn"
+  },
+  {
+    "name": "New York City",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "climatedesignersnyc",
+    "calendarApiId": "cal-QieDjWjRGqiAjbt"
+  },
+  {
+    "name": "Seattle",
+    "region": "North America",
+    "source": "luma",
+    "lumaSlug": "climatedesignersseattle",
+    "calendarApiId": "cal-WGVnxuwtj9Kd4eS"
+  },
+  {
+    "name": "Toronto",
+    "region": "North America",
+    "source": "manual",
+    "reason": "The link on file (luma.com/user/usr-3ZbaUujqix7GisL) is a Luma user profile, not a calendar page, so no calendar ID can be resolved from it."
+  },
+  {
+    "name": "Bengaluru",
+    "region": "Asia",
+    "source": "luma",
+    "lumaSlug": null,
+    "calendarApiId": "cal-0lGSnb01ATbjFgL"
+  },
+  {
+    "name": "Dubai",
+    "region": "Asia",
+    "source": "manual",
+    "reason": "No calendar link on file yet."
+  },
+  {
+    "name": "Japan",
+    "region": "Asia",
+    "source": "manual",
+    "reason": "Uses Peatix, not Luma. The group URL on file redirects to the Peatix homepage and the site is client-rendered, so it isn't scrapable via a simple HTTP request yet."
+  },
+  {
+    "name": "Philippines",
+    "region": "Asia",
+    "source": "manual",
+    "reason": "No calendar link on file yet."
+  },
+  {
+    "name": "Singapore",
+    "region": "Asia",
+    "source": "manual",
+    "reason": "No calendar link on file yet."
+  },
+  {
+    "name": "Milan",
+    "region": "Europe",
+    "source": "manual",
+    "reason": "Uses other platforms (e.g. Humanitix, Instagram) instead of Luma."
+  }
+]

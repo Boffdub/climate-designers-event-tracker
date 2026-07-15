@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Climate Designers Event Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Climate Designers Event Tracker</h1>
+    <p class="subtitle">All chapters, one place. Last updated: <span id="updated-at">—</span></p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div class="view-toggle">
+        <button id="btn-table" class="view-btn active">Table</button>
+        <button id="btn-calendar" class="view-btn">Calendar</button>
+      </div>
+
+      <div class="filters">
+        <label>
+          Region
+          <select id="filter-region">
+            <option value="">All regions</option>
+          </select>
+        </label>
+        <label>
+          Chapter
+          <select id="filter-chapter">
+            <option value="">All chapters</option>
+          </select>
+        </label>
+        <label>
+          <select id="filter-time">
+            <option value="upcoming">Upcoming</option>
+            <option value="past">Past</option>
+            <option value="all">All</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <section id="table-view">
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Chapter</th>
+            <th>Region</th>
+            <th>Date</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      <p id="no-events" class="empty-state" hidden>No events match these filters.</p>
+    </section>
+
+    <section id="calendar-view" hidden>
+      <div id="calendar"></div>
+    </section>
+
+    <section id="needs-setup">
+      <h2>Needs setup</h2>
+      <p class="subtitle">These chapters aren't feeding into this dashboard automatically yet.</p>
+      <ul id="flagged-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
