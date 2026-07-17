@@ -33,7 +33,22 @@ Then open `http://localhost:8934/`.
 - **Backend (scraper + data + automation): done and verified.** Confirmed against the chapters' existing Notion tracker.
 - **Frontend: in progress, styled to match the real Climate Designers brand** (colors/fonts pulled from https://www.climatedesigners.org/styleguide — Archivo Black headings, dark header, bright accent palette). The user is iterating on `style.css`/`index.html` directly in Chrome DevTools (open via `http://localhost:8934/`, not the `index.html` file directly — `fetch()` doesn't work under the `file://` protocol) and may still bring in a Figma design on top of this. Small pending polish items get fixed as they're noticed (e.g. region-tag pill sizing, filter alignment).
 - **Hosting: not yet set up.** Repo is private, so plan is Vercel (supports private repos free), not GitHub Pages (requires a public repo). Needs a Vercel account created by the user, then the repo connected for auto-deploy.
-- **Open question: standalone dashboard vs. writing into the existing Notion tracker.** The user is also considering having the scraper write new events directly into the internal Notion database ("Event Tracking (Internal)") via Notion's API instead of (or alongside) this dashboard — free either way. Current lean is toward keeping the standalone dashboard, since the longer-term goal is to make chapter events **publicly** visible (not just the ~5 people with internal Notion access) and eventually embed this on the Climate Designers Squarespace site, which a public Notion page doesn't do well. Not decided yet.
+
+## Open question: standalone dashboard vs. writing into the existing Notion tracker
+
+Instead of (or alongside) this dashboard, the scraper could write new events directly into the internal Notion database ("Event Tracking (Internal)") via Notion's API. Rough mechanism, if we go this way:
+
+1. Create a Notion **internal integration** (Notion Settings → Connections) to get an API token.
+2. Share the "Event Tracking (Internal)" database with that integration.
+3. Store the token as a **GitHub Actions secret** (never exposed to/needed by Claude — it's only used inside the scheduled workflow).
+4. Extend `scripts/scrape.js` (or add a sibling script) to check the Notion database for events already logged (dedupe by Event URL) and create new pages for anything new, matching the existing schema (Event, Chapter/Hub, Event date, Quarter, Format, Category, Event URL, Location).
+
+Both paths are free (GitHub Actions minutes and the Notion API are both free at this scale). The trade-off is about **audience**, not cost or engineering effort:
+
+- Notion route: keeps one source of truth, but visibility stays limited to whoever has access to that internal Notion workspace (currently ~5 people: Marc, Sabrina, Natalie, the NA regional lead, and the Asia regional lead) — chapter leaders themselves don't have access.
+- Dashboard route (current plan): can go fully public (public repo + free GitHub Pages, or any other free static host) and is straightforward to embed via iframe/code block into the Climate Designers Squarespace site later — which a public Notion page doesn't do as cleanly.
+
+Current lean is toward keeping the standalone dashboard, since the longer-term goal is public visibility and a Squarespace embed, not just wider internal access. Not decided yet — Notion could still end up being useful as an *input* (e.g. Natalie keeps logging events there) even if it's not the public-facing output.
 
 ## Chapters not yet auto-scraped
 
