@@ -1,9 +1,8 @@
 node_modules/
 .claude/
+.DS_Store
 
 # Internal reference material used while building this — not part of the app
 Chapters Calendars.csv
-Luma Event Tracker - Calendar View .png
-Luma Event Tracker - Table View 1.png
-Luma Event Tracker - Table View 2.png
-Screenshot 2026-07-15*.png
+Luma Event Tracker*.png
+Screenshot *.png

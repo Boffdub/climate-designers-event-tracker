@@ -28,11 +28,12 @@ python3 -m http.server 8934   # or any static file server
 
 Then open `http://localhost:8934/`.
 
-## Current status (as of 2026-07-15)
+## Current status (as of 2026-07-17)
 
 - **Backend (scraper + data + automation): done and verified.** Confirmed against the chapters' existing Notion tracker.
-- **Frontend: placeholder only.** The current `index.html`/`style.css` don't match the intended look — the user is designing the dashboard in Figma and will bring that design back for implementation. Don't restyle further without it.
+- **Frontend: in progress, styled to match the real Climate Designers brand** (colors/fonts pulled from https://www.climatedesigners.org/styleguide — Archivo Black headings, dark header, bright accent palette). The user is iterating on `style.css`/`index.html` directly in Chrome DevTools (open via `http://localhost:8934/`, not the `index.html` file directly — `fetch()` doesn't work under the `file://` protocol) and may still bring in a Figma design on top of this. Small pending polish items get fixed as they're noticed (e.g. region-tag pill sizing, filter alignment).
 - **Hosting: not yet set up.** Repo is private, so plan is Vercel (supports private repos free), not GitHub Pages (requires a public repo). Needs a Vercel account created by the user, then the repo connected for auto-deploy.
+- **Open question: standalone dashboard vs. writing into the existing Notion tracker.** The user is also considering having the scraper write new events directly into the internal Notion database ("Event Tracking (Internal)") via Notion's API instead of (or alongside) this dashboard — free either way. Current lean is toward keeping the standalone dashboard, since the longer-term goal is to make chapter events **publicly** visible (not just the ~5 people with internal Notion access) and eventually embed this on the Climate Designers Squarespace site, which a public Notion page doesn't do well. Not decided yet.
 
 ## Chapters not yet auto-scraped
 
