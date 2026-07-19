@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T14:18:48.836Z",
+  "generatedAt": "2026-07-19T14:22:20.675Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1108,7 +1108,7 @@
       "startAt": "2026-08-08T05:00:00.000Z",
       "endAt": "2026-08-08T07:00:00.000Z",
       "timezone": "Asia/Kolkata",
-      "location": "Cubbon Park Parking, XHHW+WV6, Cubbon Rd, Nunegundlapalli, Ambedkar Veedhi, Bengaluru, Karnataka 560001, India",
+      "location": null,
       "url": "https://luma.com/qv99278n",
       "source": "luma"
     },
