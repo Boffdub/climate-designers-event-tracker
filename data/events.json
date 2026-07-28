@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T15:39:34.759Z",
+  "generatedAt": "2026-07-28T15:17:06.230Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1110,6 +1110,17 @@
       "timezone": "Asia/Kolkata",
       "location": null,
       "url": "https://luma.com/qv99278n",
+      "source": "luma"
+    },
+    {
+      "chapter": "Los Angeles",
+      "region": "North America",
+      "name": "🎨Zine Making Workshop at RiverFest!",
+      "startAt": "2026-08-09T21:30:00.000Z",
+      "endAt": "2026-08-10T02:30:00.000Z",
+      "timezone": "America/Los_Angeles",
+      "location": "Los Angeles State Historic Park, 1245 N Spring St, Los Angeles, CA 90012, USA",
+      "url": "https://luma.com/8h8pf5l2",
       "source": "luma"
     },
     {
