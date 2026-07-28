@@ -8,7 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
   <header>
@@ -21,6 +23,7 @@
       <div class="view-toggle">
         <button id="btn-table" class="view-btn active">Table</button>
         <button id="btn-calendar" class="view-btn">Calendar</button>
+        <button id="btn-map" class="view-btn">Map</button>
       </div>
 
       <div class="filters">
@@ -65,6 +68,11 @@
 
     <section id="calendar-view" hidden>
       <div id="calendar"></div>
+    </section>
+
+    <section id="map-view" hidden>
+      <div id="map"></div>
+      <p id="no-located-events" class="empty-state" hidden>No located events match these filters.</p>
     </section>
 
     <section id="needs-setup">

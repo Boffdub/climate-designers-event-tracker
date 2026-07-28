@@ -4,61 +4,96 @@
     "region": "North America",
     "source": "luma",
     "lumaSlug": "climate-designers-bay-area",
-    "calendarApiId": "cal-AT4LbFFs7LZVphs"
+    "calendarApiId": "cal-AT4LbFFs7LZVphs",
+    "approvedHosts": [
+      "Climate Designers Bay Area",
+      "Leslie Forman",
+      "Tim Lillis"
+    ]
   },
   {
     "name": "Boston",
     "region": "North America",
     "source": "luma",
     "lumaSlug": "BostonClimateDesigners",
-    "calendarApiId": "cal-zd15HKalCauKRjm"
+    "calendarApiId": "cal-zd15HKalCauKRjm",
+    "approvedHosts": [
+      "Climate Designers Boston"
+    ]
   },
   {
     "name": "Chicago",
     "region": "North America",
     "source": "luma",
     "lumaSlug": "climatedesignerschicago",
-    "calendarApiId": "cal-d5WhdJZQGnlWIvx"
+    "calendarApiId": "cal-d5WhdJZQGnlWIvx",
+    "approvedHosts": [
+      "Climate Designers Chicago"
+    ]
   },
   {
     "name": "Los Angeles",
     "region": "North America",
     "source": "luma",
     "lumaSlug": "ClimateDesignersLA",
-    "calendarApiId": "cal-NrQu55Jl3uFUEWn"
+    "calendarApiId": "cal-NrQu55Jl3uFUEWn",
+    "approvedHosts": [
+      "Climate Designers LA",
+      "Rachel Cellinese",
+      "Margaret To"
+    ]
   },
   {
     "name": "New York City",
     "region": "North America",
     "source": "luma",
     "lumaSlug": "climatedesignersnyc",
-    "calendarApiId": "cal-QieDjWjRGqiAjbt"
+    "calendarApiId": "cal-QieDjWjRGqiAjbt",
+    "approvedHosts": [
+      "Climate Designers NYC"
+    ]
   },
   {
     "name": "Seattle",
     "region": "North America",
     "source": "luma",
     "lumaSlug": "climatedesignersseattle",
-    "calendarApiId": "cal-WGVnxuwtj9Kd4eS"
+    "calendarApiId": "cal-WGVnxuwtj9Kd4eS",
+    "approvedHosts": [
+      "Climate Designers Seattle",
+      "Alexander Crease"
+    ]
   },
   {
     "name": "Toronto",
     "region": "North America",
-    "source": "manual",
-    "reason": "The link on file (luma.com/user/usr-3ZbaUujqix7GisL) is a Luma user profile, not a calendar page, so no calendar ID can be resolved from it."
+    "source": "luma",
+    "lumaSlug": "climatedesignerstoronto",
+    "calendarApiId": "cal-Kr5UnoJXyB5Dpbw",
+    "approvedHosts": [
+      "Climate Designers Toronto"
+    ]
   },
   {
     "name": "Bengaluru",
     "region": "Asia",
     "source": "luma",
-    "lumaSlug": null,
-    "calendarApiId": "cal-0lGSnb01ATbjFgL"
+    "lumaSlug": "climatedesignersblr",
+    "calendarApiId": "cal-0lGSnb01ATbjFgL",
+    "approvedHosts": [
+      "Climate Designers Bengaluru",
+      "Keerthana Rajan"
+    ]
   },
   {
     "name": "Dubai",
     "region": "Asia",
-    "source": "manual",
-    "reason": "No calendar link on file yet."
+    "source": "luma",
+    "lumaSlug": "climatedesignersdxb",
+    "calendarApiId": "cal-LBc8bNvXq0hv64G",
+    "approvedHosts": [
+      "Climate Designers Dubai"
+    ]
   },
   {
     "name": "Japan",

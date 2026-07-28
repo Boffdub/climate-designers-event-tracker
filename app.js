@@ -1,5 +1,7 @@
 let allEvents = [];
 let calendar = null;
+let map = null;
+let markersLayer = null;
 
 const tableBody = document.getElementById('table-body');
 const noEvents = document.getElementById('no-events');
@@ -109,6 +111,60 @@ function renderCalendar() {
   }
 }
 
+function renderMap() {
+  const events = getFilteredEvents().filter((e) => e.geo);
+  const noLocatedEvents = document.getElementById('no-located-events');
+
+  if (!map) {
+    map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+    markersLayer = L.layerGroup().addTo(map);
+  }
+
+  markersLayer.clearLayers();
+
+  if (events.length === 0) {
+    noLocatedEvents.hidden = false;
+    map.setView([20, 0], 2);
+    return;
+  }
+  noLocatedEvents.hidden = true;
+
+  // Group events at (near) the same coordinates so overlapping venues share one marker.
+  const groups = new Map();
+  for (const e of events) {
+    const key = `${e.geo.lat.toFixed(4)},${e.geo.lng.toFixed(4)}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(e);
+  }
+
+  const bounds = [];
+  for (const [, groupEvents] of groups) {
+    const { lat, lng } = groupEvents[0].geo;
+    bounds.push([lat, lng]);
+
+    const popupHtml = `<div class="map-popup">${groupEvents
+      .map(
+        (e) => `
+          <div class="map-popup-event">
+            <a href="${e.url}" target="_blank" rel="noopener">${e.name}</a><br>
+            <span class="map-popup-meta">${e.chapter} · ${formatDate(e.startAt, e.timezone)}</span>
+          </div>`
+      )
+      .join('')}</div>`;
+
+    L.marker([lat, lng]).addTo(markersLayer).bindPopup(popupHtml);
+  }
+
+  map.fitBounds(bounds, { padding: [24, 24], maxZoom: 14 });
+
+  // Leaflet needs a resize nudge the first time its container becomes visible.
+  setTimeout(() => map.invalidateSize(), 0);
+}
+
 function renderFlagged(flaggedChapters) {
   const list = document.getElementById('flagged-list');
   list.innerHTML = '';
@@ -122,34 +178,27 @@ function renderFlagged(flaggedChapters) {
   }
 }
 
-function switchView(view) {
-  const tableSection = document.getElementById('table-view');
-  const calendarSection = document.getElementById('calendar-view');
-  const btnTable = document.getElementById('btn-table');
-  const btnCalendar = document.getElementById('btn-calendar');
+const views = {
+  table: { section: 'table-view', button: 'btn-table', render: renderTable },
+  calendar: { section: 'calendar-view', button: 'btn-calendar', render: renderCalendar },
+  map: { section: 'map-view', button: 'btn-map', render: renderMap },
+};
+let activeView = 'table';
 
-  if (view === 'table') {
-    tableSection.hidden = false;
-    calendarSection.hidden = true;
-    btnTable.classList.add('active');
-    btnCalendar.classList.remove('active');
-    renderTable();
-  } else {
-    tableSection.hidden = true;
-    calendarSection.hidden = false;
-    btnTable.classList.remove('active');
-    btnCalendar.classList.add('active');
-    renderCalendar();
+function switchView(view) {
+  activeView = view;
+  for (const [name, { section, button }] of Object.entries(views)) {
+    document.getElementById(section).hidden = name !== view;
+    document.getElementById(button).classList.toggle('active', name === view);
   }
+  views[view].render();
 }
 
-document.getElementById('btn-table').addEventListener('click', () => switchView('table'));
-document.getElementById('btn-calendar').addEventListener('click', () => switchView('calendar'));
+Object.entries(views).forEach(([name, { button }]) =>
+  document.getElementById(button).addEventListener('click', () => switchView(name))
+);
 [regionFilter, chapterFilter, timeFilter].forEach((el) =>
-  el.addEventListener('change', () => {
-    const activeView = document.getElementById('btn-calendar').classList.contains('active') ? 'calendar' : 'table';
-    switchView(activeView);
-  })
+  el.addEventListener('change', () => switchView(activeView))
 );
 
 async function init() {

@@ -204,6 +204,41 @@ td a:hover {
   border-color: var(--pink) !important;
 }
 
+#map-view {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#map {
+  height: 560px;
+  border-radius: 6px;
+}
+
+.map-popup h4 {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.map-popup .map-popup-event {
+  margin-bottom: 6px;
+}
+
+.map-popup .map-popup-event:last-child {
+  margin-bottom: 0;
+}
+
+.map-popup a {
+  color: var(--near-black);
+  font-weight: 700;
+}
+
+.map-popup .map-popup-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 #needs-setup {
   margin-top: 40px;
   padding-top: 20px;
