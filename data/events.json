@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T16:44:41.418Z",
+  "generatedAt": "2026-07-29T15:06:58.270Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1437,9 +1437,13 @@
       "startAt": "2026-08-20T22:30:00.000Z",
       "endAt": "2026-08-21T00:30:00.000Z",
       "timezone": "America/Toronto",
-      "location": null,
+      "location": "1208 Yonge St, Toronto, ON M4T 1W1, Canada",
       "url": "https://luma.com/8h40h4rw",
-      "source": "luma"
+      "source": "luma",
+      "geo": {
+        "lat": 43.6816978,
+        "lng": -79.3916485
+      }
     },
     {
       "chapter": "Toronto",

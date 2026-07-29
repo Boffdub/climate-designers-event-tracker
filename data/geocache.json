@@ -253,5 +253,9 @@
   "Los Angeles State Historic Park, 1245 N Spring St, Los Angeles, CA 90012, USA": {
     "lat": 34.0652018,
     "lng": -118.2349652
+  },
+  "1208 Yonge St, Toronto, ON M4T 1W1, Canada": {
+    "lat": 43.6816978,
+    "lng": -79.3916485
   }
 }
