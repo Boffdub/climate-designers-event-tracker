@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T14:20:07.129Z",
+  "generatedAt": "2026-08-14T14:14:16.651Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1413,21 +1413,6 @@
       "geo": {
         "lat": 34.0652018,
         "lng": -118.2349652
-      }
-    },
-    {
-      "chapter": "New York City",
-      "region": "North America",
-      "name": "CDNYC Mixer: Arcade Assembly",
-      "startAt": "2026-08-13T22:00:00.000Z",
-      "endAt": "2026-08-14T01:00:00.000Z",
-      "timezone": "America/New_York",
-      "location": "Barcade, 6 St Marks Pl, New York, NY 10003, USA",
-      "url": "https://luma.com/j5vq5786",
-      "source": "luma",
-      "geo": {
-        "lat": 40.7290914,
-        "lng": -73.9895672
       }
     },
     {
