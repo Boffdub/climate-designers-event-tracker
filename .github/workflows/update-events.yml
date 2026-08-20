@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Run scraper
         run: node scripts/scrape.js
@@ -33,10 +33,27 @@ jobs:
           LIMIT: '0'
         run: node scripts/sync-notion.js
 
-      - name: Commit updated events.json
+      - name: Commit updated events.json to public-site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/geocache.json
           git diff --cached --quiet || git commit -m "Update events.json"
           git push origin HEAD:public-site
+
+      # Keep main's data in sync for Notion/local work on that branch.
+      - name: Checkout main for data mirror
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-repo
+
+      - name: Mirror event data to main
+        run: |
+          cp data/events.json data/geocache.json main-repo/data/
+          cd main-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/events.json data/geocache.json
+          git diff --cached --quiet || git commit -m "Update events.json"
+          git push origin HEAD:main
