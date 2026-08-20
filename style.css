@@ -56,7 +56,7 @@ body {
 .chevron {
   width: 40px;
   height: 40px;
-  background-image: url("assets/dropdown-closed.png");
+  background-image: url("assets/Dropdown-Closed.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,7 +64,7 @@ body {
 }
 
 .event-group.open .chevron {
-  background-image: url("assets/dropdown-open.png");
+  background-image: url("assets/Dropdown-Open.png");
 }
 
 .event-group:not(.open) .event-group-body {
