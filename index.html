@@ -21,9 +21,9 @@
   <main>
     <div class="controls">
       <div class="view-toggle">
-        <button id="btn-table" class="view-btn active">Table</button>
-        <button id="btn-calendar" class="view-btn">Calendar</button>
-        <button id="btn-map" class="view-btn">Map</button>
+        <button id="btn-table" class="view-btn active">List</button>
+        <!-- <button id="btn-calendar" class="view-btn">Calendar</button>
+        <button id="btn-map" class="view-btn">Map</button> -->
       </div>
 
       <div class="filters">
@@ -39,31 +39,25 @@
             <option value="">All chapters</option>
           </select>
         </label>
-        <label>
-          Time
-          <select id="filter-time">
-            <option value="upcoming">Upcoming</option>
-            <option value="past">Past</option>
-            <option value="all">All</option>
-          </select>
-        </label>
       </div>
     </div>
-
-    <section id="table-view">
-      <table>
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Chapter</th>
-            <th>Region</th>
-            <th>Date</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
-      <p id="no-events" class="empty-state" hidden>No events match these filters.</p>
+    
+    <section id="list-view">
+      <section class="event-group open">
+        <button type="button" class="event-group-header">
+          <span>Upcoming</span>
+          <span class="chevron" aria-hidden="true"></span>
+        </button>
+        <div class="event-group-body" id="upcoming-list"></div>
+      </section>
+    
+      <section class="event-group">
+        <button type="button" class="event-group-header">
+          <span>Past</span>
+          <span class="chevron" aria-hidden="true"></span>
+        </button>
+        <div class="event-group-body" id="past-list"></div>
+      </section>
     </section>
 
     <section id="calendar-view" hidden>
@@ -73,12 +67,6 @@
     <section id="map-view" hidden>
       <div id="map"></div>
       <p id="no-located-events" class="empty-state" hidden>No located events match these filters.</p>
-    </section>
-
-    <section id="needs-setup">
-      <h2>Needs setup</h2>
-      <p class="subtitle">These chapters aren't feeding into this dashboard automatically yet.</p>
-      <ul id="flagged-list"></ul>
     </section>
   </main>
 

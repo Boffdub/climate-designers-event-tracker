@@ -72,6 +72,7 @@ function normalizeLumaEvent(entry, chapter) {
     startAt: event.start_at,
     endAt: event.end_at,
     timezone: event.timezone,
+    coverUrl: event.cover_url || null, 
     location,
     url: `https://luma.com/${event.url}`,
     source: 'luma',
