@@ -115,9 +115,10 @@ document.getElementById('btn-table').addEventListener('click', () => renderList(
   el.addEventListener('change', () => renderList())
 );
 
-document.querySelectorAll('.event-group-header').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    btn.closest('.event-group').classList.toggle('open');
+document.querySelectorAll('.chevron').forEach((chevron) => {
+  chevron.addEventListener('click', (e) => {
+    e.stopPropagation();
+    chevron.closest('.event-group').classList.toggle('open');
   });
 });
 
