@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T13:28:13.920Z",
+  "generatedAt": "2026-08-24T13:57:19.664Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1546,6 +1546,22 @@
       "geo": {
         "lat": 43.6658622,
         "lng": -79.3609224
+      }
+    },
+    {
+      "chapter": "Toronto",
+      "region": "North America",
+      "name": "Climate Book & Article Club: Regenerative Design",
+      "startAt": "2026-09-17T22:30:00.000Z",
+      "endAt": "2026-09-18T00:30:00.000Z",
+      "timezone": "America/Toronto",
+      "coverUrl": "https://images.lumacdn.com/uploads/db/27d69997-b428-4bd9-ac67-fedb0fb5269d.jpg",
+      "location": "Boxcar Social, 1208 Yonge St, Toronto, ON M4T 1W1, Canada",
+      "url": "https://luma.com/alpdgbe0",
+      "source": "luma",
+      "geo": {
+        "lat": 43.6816978,
+        "lng": -79.3916485
       }
     }
   ],
