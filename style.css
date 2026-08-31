@@ -283,10 +283,6 @@ td a:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.fc .fc-daygrid-event {
-  white-space: normal;
-}
-
 .fc .fc-toolbar-title {
   font-family: "Archivo Black", sans-serif;
   text-transform: uppercase;
@@ -301,6 +297,74 @@ td a:hover {
 .fc .fc-button-primary:hover {
   background: var(--pink) !important;
   border-color: var(--pink) !important;
+}
+
+.fc .fc-col-header-cell {
+  background: white;
+  border-bottom: 2px solid var(--border);
+  padding: 8px 0;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none !important;
+}
+
+.fc .fc-daygrid-day-number {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  text-decoration: none !important;
+}
+
+.fc .fc-day-today {
+  background: rgba(0, 171, 255, 0.08) !important;
+}
+
+.fc .fc-daygrid-event {
+  background: white !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  margin: 2px 4px;
+  padding: 0;
+  white-space: normal;
+}
+
+.fc .fc-daygrid-event:hover {
+  border-color: var(--blue) !important;
+  cursor: pointer;
+}
+
+.fc-event-custom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  overflow: hidden;
+}
+
+.fc-event-thumb {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: silver;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.fc-event-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #map-view {

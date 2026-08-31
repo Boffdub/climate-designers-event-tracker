@@ -88,15 +88,8 @@ function populateFilters(events) {
 }
 
 function renderList() {
-  const region = regionFilter.value;
-  const chapter = chapterFilter.value;
   const now = new Date();
-
-  const filtered = allEvents.filter((e) => {
-    if (region && e.region !== region) return false;
-    if (chapter && e.chapter !== chapter) return false;
-    return true;
-  });
+  const filtered = getFilteredEvents();
 
   const upcoming = filtered
     .filter((e) => new Date(e.startAt) >= now)
@@ -110,10 +103,100 @@ function renderList() {
   pastList.innerHTML = past.map(eventCardHtml).join('');
 }
 
-document.getElementById('btn-table').addEventListener('click', () => renderList());
+const listView = document.getElementById('list-view');
+const calendarView = document.getElementById('calendar-view');
+const btnTable = document.getElementById('btn-table');
+const btnCalendar = document.getElementById('btn-calendar');
+
+function showListView() {
+  listView.hidden = false;
+  calendarView.hidden = true;
+  btnTable.classList.add('active');
+  btnCalendar.classList.remove('active');
+  renderList();
+}
+
+function showCalendarView() {
+  listView.hidden = true;
+  calendarView.hidden = false;
+  btnTable.classList.remove('active');
+  btnCalendar.classList.add('active');
+  calendar.updateSize();
+  renderCalendar();
+
+  const todayCell = calendarEl.querySelector('.fc-day-today');
+  if (todayCell) {
+    todayCell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+btnTable.addEventListener('click', showListView);
+btnCalendar.addEventListener('click', showCalendarView);
+
 [regionFilter, chapterFilter].forEach((el) =>
-  el.addEventListener('change', () => renderList())
+  el.addEventListener('change', () => {
+    renderList();
+    renderCalendar();
+  })
 );
+
+const calendarEl = document.getElementById('calendar');
+let calendar = null;
+
+function getFilteredEvents() {
+  const region = regionFilter.value;
+  const chapter = chapterFilter.value;
+  return allEvents.filter((e) => {
+    if (region && e.region !== region) return false;
+    if (chapter && e.chapter !== chapter) return false;
+    return true;
+  });
+}
+
+function renderCalendar() {
+  const fcEvents = getFilteredEvents().map((e) => ({
+    title: e.name,
+    start: e.startAt,
+    end: e.endAt,
+    extendedProps: {
+      coverUrl: e.coverUrl,
+      chapter: e.chapter,
+      url: e.url,
+    },
+  }));
+
+  calendar.removeAllEvents();
+  calendar.addEventSource(fcEvents);
+}
+
+function initCalendar() {
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    events: [],
+    eventContent: function (arg) {
+      const props = arg.event.extendedProps;
+      const thumbStyle = props.coverUrl
+        ? `style="background-image: url('${props.coverUrl}')"`
+        : '';
+      const gradient = chapterGradient(props.chapter);
+
+      return {
+        html: `
+          <div class="fc-event-custom" style="background: ${gradient}">
+            <div class="fc-event-thumb" ${thumbStyle}></div>
+            <span class="fc-event-title">${arg.event.title}</span>
+          </div>
+        `,
+      };
+    },
+    eventClick: function (info) {
+      info.jsEvent.preventDefault();
+      window.open(info.event.extendedProps.url, '_blank', 'noopener');
+    },
+  });
+  calendar.render();
+}
+
 
 document.querySelectorAll('.chevron').forEach((chevron) => {
   chevron.addEventListener('click', (e) => {
@@ -134,6 +217,7 @@ async function init() {
 
   populateFilters(allEvents);
   renderList();
+  initCalendar();
 }
 
 init();
