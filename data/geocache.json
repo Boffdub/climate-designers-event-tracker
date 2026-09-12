@@ -261,5 +261,9 @@
   "Boxcar Social, 1208 Yonge St, Toronto, ON M4T 1W1, Canada": {
     "lat": 43.6816978,
     "lng": -79.3916485
+  },
+  "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada": {
+    "lat": 43.682232,
+    "lng": -79.3918454
   }
 }
