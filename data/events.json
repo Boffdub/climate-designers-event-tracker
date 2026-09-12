@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T16:51:49.633Z",
+  "generatedAt": "2026-09-12T15:58:13.078Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1556,12 +1556,28 @@
       "endAt": "2026-09-18T00:30:00.000Z",
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/db/27d69997-b428-4bd9-ac67-fedb0fb5269d.jpg",
-      "location": "Boxcar Social, 1208 Yonge St, Toronto, ON M4T 1W1, Canada",
+      "location": "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada",
       "url": "https://luma.com/alpdgbe0",
       "source": "luma",
       "geo": {
-        "lat": 43.6816978,
-        "lng": -79.3916485
+        "lat": 43.682232,
+        "lng": -79.3918454
+      }
+    },
+    {
+      "chapter": "Boston",
+      "region": "North America",
+      "name": "The Boston Farmer's Almanac Discussion Circle",
+      "startAt": "2026-10-14T21:30:00.000Z",
+      "endAt": "2026-10-14T23:00:00.000Z",
+      "timezone": "America/New_York",
+      "coverUrl": "https://images.lumacdn.com/uploads/d8/633da83a-bd19-48ed-9f42-83c9300e8f31.png",
+      "location": "The Foundry, 101 Rogers St, Cambridge, MA 02142, USA",
+      "url": "https://luma.com/46tji869",
+      "source": "luma",
+      "geo": {
+        "lat": 42.3666151,
+        "lng": -71.0827636
       }
     }
   ],
