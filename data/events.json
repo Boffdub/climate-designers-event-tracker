@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T18:40:26.481Z",
+  "generatedAt": "2026-10-02T18:11:04.183Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1563,6 +1563,18 @@
         "lat": 43.682232,
         "lng": -79.3918454
       }
+    },
+    {
+      "chapter": "Boston",
+      "region": "North America",
+      "name": "Climate Designers: Successes & Struggles",
+      "startAt": "2026-10-07T23:00:00.000Z",
+      "endAt": "2026-10-08T00:30:00.000Z",
+      "timezone": "America/Los_Angeles",
+      "coverUrl": "https://images.lumacdn.com/event-covers/xp/231ff901-2aaf-4558-bd9a-22cc14b4bdd7.png",
+      "location": null,
+      "url": "https://luma.com/f7lrns03",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
