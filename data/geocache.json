@@ -265,5 +265,9 @@
   "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada": {
     "lat": 43.682232,
     "lng": -79.3918454
+  },
+  "The Rug Shop, 5028 N Eagle Rock Blvd, Los Angeles, CA 90041, USA": {
+    "lat": 34.1378663,
+    "lng": -118.2142613
   }
 }
