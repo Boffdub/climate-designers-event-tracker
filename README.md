@@ -20,7 +20,7 @@ The North American Regional Lead previously checked each chapter's Luma/Peatix p
 1. **`data/chapters.json`** — one entry per chapter: name, region, and either a `luma` source with a resolved `calendarApiId` (plus optional `approvedHosts` for host filtering), or a `manual` source with a `reason` the chapter isn't auto-scraped yet.
 2. **`scripts/scrape.js`** — plain Node script (no dependencies). For each `luma` chapter, calls Luma's public JSON API (`https://api.lu.ma/calendar/get-items?calendar_api_id=<id>&period=future|past`), merges and dedupes events, stores each event's Luma **`coverUrl`**, geocodes addresses via OpenStreetMap Nominatim (caching in `data/geocache.json`), and writes `data/events.json`. Host filter is **on by default**: keep an event if **any** Luma host matches that chapter's `approvedHosts` (co-hosted partner events still pass). `HOST_FILTER=review` logs kept/skipped without changing output; `HOST_FILTER=off` includes every calendar event.
 3. **`scripts/sync-notion.js`** — create-only sync of **new future** events from `data/events.json` into Notion (dedupe by Event URL). Fills name, date, chapter, format, location, URL, and quarter; leaves **Category** and **Place** blank for humans.
-4. **`.github/workflows/update-events.yml`** — daily job (`0 13 * * *` UTC ≈ **9:00 AM Eastern** during daylight saving). Checks out **`public-site`**, scrapes, syncs Notion, commits data there (so Pages stays fresh), then mirrors `data/events.json` / `data/geocache.json` onto **`main`**. Also runnable from the Actions tab (`workflow_dispatch`).
+4. **`.github/workflows/update-events.yml`** — daily job scheduled for `0 13 * * *` UTC (9:00 AM Eastern during daylight saving). GitHub delays scheduled jobs when it's busy, so in practice runs have started between about 1 and 5 PM Eastern. Checks out **`public-site`**, scrapes, syncs Notion, commits data there (so Pages stays fresh), then mirrors `data/events.json` / `data/geocache.json` onto **`main`**. Also runnable from the Actions tab (`workflow_dispatch`).
 5. **`index.html` / `style.css` / `app.js`** (on `public-site`) — static frontend that fetches `data/events.json` and renders a list of event cards (chapter gradients, cover thumbnails, region/chapter filters, chevron accordion for Upcoming/Past). Cards link out to Luma.
 
 No build step, no backend server — everything is static files plus a scheduled script.
@@ -77,7 +77,7 @@ To point at the real Climate Designers tracker later: change `NOTION_DATABASE_ID
 - **Backend (scraper + data + GitHub scrape job): done.** Host filtering on; Luma cover URLs stored as `coverUrl`.
 - **Notion sync: done for Event Tracker Test** (create-only; Category/Place still manual). Daily Actions sync with `NOTION_TOKEN` set.
 - **Public site: live on GitHub Pages** from `public-site` — list UI with chapter gradients, cover images, filters, and accordion sections. Calendar/Map not on this branch yet.
-- **Daily refresh:** Action updates `public-site` (Pages) and mirrors event data to `main` (~9 AM ET during EDT).
+- **Daily refresh:** Action updates `public-site` (Pages) and mirrors event data to `main` (usually by mid-afternoon ET; scheduled for 9 AM ET, but GitHub delays scheduled runs).
 
 ## Dashboard vs Notion
 
