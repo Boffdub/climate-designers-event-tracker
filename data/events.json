@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T17:53:05.036Z",
+  "generatedAt": "2026-10-12T21:31:36.919Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1607,6 +1607,18 @@
         "lat": 42.3666151,
         "lng": -71.0827636
       }
+    },
+    {
+      "chapter": "Dubai",
+      "region": "Asia",
+      "name": "Welcome, Dubai's Climate Creatives!",
+      "startAt": "2026-10-24T12:00:00.000Z",
+      "endAt": "2026-10-24T13:00:00.000Z",
+      "timezone": "Asia/Dubai",
+      "coverUrl": "https://images.lumacdn.com/uploads/qv/05954f77-d9df-472b-8cda-6ec3bca47e96.jpg",
+      "location": null,
+      "url": "https://luma.com/j0bgqnr4",
+      "source": "luma"
     }
   ],
   "flaggedChapters": [
