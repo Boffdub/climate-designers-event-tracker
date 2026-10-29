@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T20:07:51.385Z",
+  "generatedAt": "2026-10-29T20:31:05.461Z",
   "events": [
     {
       "chapter": "Los Angeles",
@@ -1016,18 +1016,6 @@
       }
     },
     {
-      "chapter": "Boston",
-      "region": "North America",
-      "name": "Climate Designers: Successes & Struggles",
-      "startAt": "2025-12-04T00:00:00.000Z",
-      "endAt": "2025-12-04T01:30:00.000Z",
-      "timezone": "America/Los_Angeles",
-      "coverUrl": "https://images.lumacdn.com/event-covers/xp/231ff901-2aaf-4558-bd9a-22cc14b4bdd7.png",
-      "location": null,
-      "url": "https://luma.com/xghlk4x4",
-      "source": "luma"
-    },
-    {
       "chapter": "Bay Area",
       "region": "North America",
       "name": "Re-gift Exchange and Holiday Gathering",
@@ -1579,18 +1567,6 @@
         "lat": 34.1378663,
         "lng": -118.2142613
       }
-    },
-    {
-      "chapter": "Boston",
-      "region": "North America",
-      "name": "Climate Designers: Successes & Struggles",
-      "startAt": "2026-10-07T23:00:00.000Z",
-      "endAt": "2026-10-08T00:30:00.000Z",
-      "timezone": "America/Los_Angeles",
-      "coverUrl": "https://images.lumacdn.com/event-covers/xp/231ff901-2aaf-4558-bd9a-22cc14b4bdd7.png",
-      "location": null,
-      "url": "https://luma.com/f7lrns03",
-      "source": "luma"
     },
     {
       "chapter": "Boston",
