@@ -43,6 +43,10 @@ function normalizeHostKey(name) {
   return name.trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
+// The global Climate Designers account hosts org-wide events (often virtual) that get
+// added to chapter calendars; on its own it shouldn't make an event count as a chapter's.
+const GLOBAL_HOSTS = new Set(['climate designers']);
+
 /** Keep if ANY host is approved (co-hosts with partners still pass). */
 function matchApprovedHost(hostNames, approvedHosts) {
   const approved = (approvedHosts || []).map(normalizeHostKey);
@@ -50,6 +54,7 @@ function matchApprovedHost(hostNames, approvedHosts) {
 
   for (const host of hostNames) {
     const key = normalizeHostKey(host);
+    if (GLOBAL_HOSTS.has(key)) continue;
     if (approvedSet.has(key)) {
       return { ok: true, matchedHost: host };
     }
@@ -95,7 +100,10 @@ async function scrapeLumaChapter(chapter, filterMode) {
   for (const entry of [...future, ...past]) {
     const event = normalizeLumaEvent(entry, chapter);
     const hosts = event.hosts;
-    const match = matchApprovedHost(hosts, chapter.approvedHosts);
+    const forced = (chapter.alwaysIncludeEvents || []).includes(event.url);
+    const match = forced
+      ? { ok: true, matchedHost: '(always-include list)' }
+      : matchApprovedHost(hosts, chapter.approvedHosts);
     const decision = {
       chapter: chapter.name,
       name: event.name,
