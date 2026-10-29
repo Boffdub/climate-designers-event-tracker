@@ -18,9 +18,13 @@ function hostFilterMode() {
   throw new Error(`Unknown HOST_FILTER="${process.env.HOST_FILTER}" (use off, review, or on)`);
 }
 
+const LUMA_USER_AGENT =
+  'Mozilla/5.0 (compatible; ClimateDesignersEventTracker/1.0; +https://boffdub.github.io/climate-designers-event-tracker/)';
+
 async function fetchLumaEntries(calendarApiId, period) {
   const url = `https://api.lu.ma/calendar/get-items?calendar_api_id=${calendarApiId}&period=${period}`;
-  const res = await fetch(url, { headers: { Accept: 'application/json' } });
+  // Luma rejects Node's default User-Agent with a 429, so identify as a browser-compatible client.
+  const res = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': LUMA_USER_AGENT } });
   if (!res.ok) {
     throw new Error(`Luma API request failed (${res.status}) for ${calendarApiId} period=${period}`);
   }
@@ -200,10 +204,16 @@ async function main() {
         return await scrapeLumaChapter(chapter, filterMode);
       } catch (err) {
         console.error(`Failed to scrape ${chapter.name}: ${err.message}`);
-        return { events: [], decisions: [] };
+        return { events: [], decisions: [], failed: true };
       }
     })
   );
+
+  // If every chapter failed, Luma is likely blocking us. Exit with an error instead of
+  // overwriting events.json with an empty list (which would blank the public site).
+  if (lumaChapters.length > 0 && results.every((r) => r.failed)) {
+    throw new Error('All Luma chapters failed to scrape; leaving events.json unchanged.');
+  }
 
   const allDecisions = results.flatMap((r) => r.decisions);
   if (filterMode === 'review' || filterMode === 'on') {
