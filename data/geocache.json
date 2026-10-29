@@ -269,5 +269,9 @@
   "The Rug Shop, 5028 N Eagle Rock Blvd, Los Angeles, CA 90041, USA": {
     "lat": 34.1378663,
     "lng": -118.2142613
+  },
+  "300 S Riverside Plaza floor 1, Chicago, IL 60606, USA": {
+    "lat": 41.8755616,
+    "lng": -87.6244212
   }
 }
