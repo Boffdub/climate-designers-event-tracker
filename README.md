@@ -18,7 +18,7 @@ The North American Regional Lead previously checked each chapter's Luma/Peatix p
 ## How it works
 
 1. **`data/chapters.json`** — one entry per chapter: name, region, and either a `luma` source with a resolved `calendarApiId` (plus optional `approvedHosts` for host filtering), or a `manual` source with a `reason` the chapter isn't auto-scraped yet.
-2. **`scripts/scrape.js`** — plain Node script (no dependencies). For each `luma` chapter, calls Luma's public JSON API (`https://api.lu.ma/calendar/get-items?calendar_api_id=<id>&period=future|past`), merges and dedupes events, stores each event's Luma **`coverUrl`**, geocodes addresses via OpenStreetMap Nominatim (caching in `data/geocache.json`), and writes `data/events.json`. Host filter is **on by default**: keep an event if **any** Luma host matches that chapter's `approvedHosts` (co-hosted partner events still pass). `HOST_FILTER=review` logs kept/skipped without changing output; `HOST_FILTER=off` includes every calendar event.
+2. **`scripts/scrape.js`** — plain Node script (no dependencies). For each `luma` chapter, calls Luma's public JSON API (`https://api.lu.ma/calendar/get-items?calendar_api_id=<id>&period=future|past`), merges and dedupes events, stores each event's Luma **`coverUrl`**, geocodes addresses via OpenStreetMap Nominatim (caching in `data/geocache.json`), and writes `data/events.json`. Host filter is **on by default**: keep an event if **any** Luma host matches that chapter's `approvedHosts` (co-hosted partner events still pass). `HOST_FILTER=review` logs kept/skipped without changing output; `HOST_FILTER=off` includes every calendar event. The global "Climate Designers" account doesn't count as a chapter host on its own (its org-wide events get added to chapter calendars), and a chapter's optional `alwaysIncludeEvents` list of Luma URLs keeps one-off exceptions.
 3. **`scripts/sync-notion.js`** — create-only sync of **new future** events from `data/events.json` into Notion (dedupe by Event URL). Fills name, date, chapter, format, location, URL, and quarter; leaves **Category** and **Place** blank for humans.
 4. **`.github/workflows/update-events.yml`** — daily job scheduled for `0 13 * * *` UTC (9:00 AM Eastern during daylight saving). GitHub delays scheduled jobs when it's busy, so in practice runs have started between about 1 and 5 PM Eastern. Checks out **`public-site`**, scrapes, syncs Notion, commits data there (so Pages stays fresh), then mirrors `data/events.json` / `data/geocache.json` onto **`main`**. Also runnable from the Actions tab (`workflow_dispatch`).
 5. **`index.html` / `style.css` / `app.js`** (on `public-site`) — static frontend that fetches `data/events.json` and renders a list of event cards (chapter gradients, cover thumbnails, region/chapter filters, chevron accordion for Upcoming/Past). Cards link out to Luma.
@@ -50,14 +50,24 @@ Always scrape **before** syncing so Notion sees the latest Luma data:
 ```bash
 node scripts/scrape.js
 
-# Practice mode — prints what it would create, writes nothing
-DRY_RUN=1 NOTION_TOKEN=ntn_... node scripts/sync-notion.js
+# Load the token into this terminal tab without saving it to shell history
+read -s "NOTION_TOKEN?Paste Notion key, then Enter: " && export NOTION_TOKEN
 
-# Live create (local default LIMIT=15; set LIMIT=0 for no cap)
-NOTION_TOKEN=ntn_... node scripts/sync-notion.js
+# Practice mode — prints what it would create, writes nothing
+DRY_RUN=1 NOTION_DATABASE_ID=<id> node scripts/sync-notion.js
+
+# Live create (local default LIMIT=15; set LIMIT=0 for no cap; LIMIT=1 for a one-row test)
+NOTION_DATABASE_ID=<id> node scripts/sync-notion.js
 ```
 
-Optional: `NOTION_DATABASE_ID=...` (defaults to the Event Tracker Test database). The Notion integration must be connected to that database. Do not commit the token.
+Notion databases:
+
+| Database | Workspace | ID | Use |
+|---|---|---|---|
+| **Event Tracking (automated)** | Climate Designers (CD Management Home → Chapter Management) | `408498810e4180ad90bfcdfb254ac159` | Production — the daily Action writes here |
+| **Event Tracker Test** | Brett's personal | `3a30471deb0980bf975df71e7ede0c23` | Sandbox for trying changes; the script falls back to it if `NOTION_DATABASE_ID` is unset |
+
+Each workspace needs its own integration token, connected to the database (**⋯ → Connections**). The Climate Designers integration was created by a workspace owner with only **Read content + Insert content**, so it can add rows but never edit or delete them. Do not commit tokens. When copying a token from a chat app, watch for invisible extra characters: `echo ${#NOTION_TOKEN}` should print 50.
 
 ### GitHub Actions secrets (daily Notion sync)
 
@@ -65,17 +75,15 @@ Repo → **Settings → Secrets and variables → Actions**:
 
 | Secret | Required | Purpose |
 |---|---|---|
-| `NOTION_TOKEN` | Yes | Notion integration token (`ntn_...`) |
-| `NOTION_DATABASE_ID` | No | Target database ID (defaults to Event Tracker Test in the script) |
+| `NOTION_TOKEN` | Yes | Climate Designers integration token (`ntn_...`) |
+| `NOTION_DATABASE_ID` | Yes | `408498810e4180ad90bfcdfb254ac159` (Event Tracking (automated)) |
 
 After secrets are set, use **Actions → Update events → Run workflow** to test. The scheduled job runs scrape → Notion sync (`LIMIT=0`) → commit to `public-site` → mirror data to `main`.
 
-To point at the real Climate Designers tracker later: change `NOTION_DATABASE_ID` (and use an integration shared on that DB). No code change required.
+## Current status (as of 2026-11-02)
 
-## Current status (as of 2026-08-21)
-
-- **Backend (scraper + data + GitHub scrape job): done.** Host filtering on; Luma cover URLs stored as `coverUrl`.
-- **Notion sync: done for Event Tracker Test** (create-only; Category/Place still manual). Daily Actions sync with `NOTION_TOKEN` set.
+- **Backend (scraper + data + GitHub scrape job): done.** Host filtering on; Luma cover URLs stored as `coverUrl`. Since Oct 2026 the scraper sends a browser-compatible `User-Agent` (Luma started rejecting Node's default with a 429), and it exits with an error instead of overwriting `events.json` if every chapter fails.
+- **Notion sync: live in the Climate Designers workspace** (Event Tracking (automated)) as of 2026-11-02. Create-only; Category and Place still manual. Next up: fill the Place column from scraped coordinates so the Notion Map view works.
 - **Public site: live on GitHub Pages** from `public-site` — list UI with chapter gradients, cover images, filters, and accordion sections. Calendar/Map not on this branch yet.
 - **Daily refresh:** Action updates `public-site` (Pages) and mirrors event data to `main` (usually by mid-afternoon ET; scheduled for 9 AM ET, but GitHub delays scheduled runs).
 
@@ -83,10 +91,8 @@ To point at the real Climate Designers tracker later: change `NOTION_DATABASE_ID
 
 Both paths are in play:
 
-- **Notion** (automated into Event Tracker Test for now): keeps the internal team's familiar tracker updated; visibility stays limited to the workspace. Category and Place still need a human.
+- **Notion** (Event Tracking (automated), Climate Designers workspace): Luma events only, added daily; visibility stays limited to the workspace. Category and Place still need a human. The team's hand-maintained **Event Tracking (Internal)** database remains the complete record, including non-Luma events (e.g. Asia chapters on connpass, Peatix, or Eventbrite). The sync never reads or writes it.
 - **Public site** (GitHub Pages): wider visibility for chapter events; cards open the Luma page.
-
-Promoting Notion sync from Test → the real CD Event Tracker is a config change (secret + integration share), not a rewrite.
 
 ## Chapters not yet auto-scraped
 
