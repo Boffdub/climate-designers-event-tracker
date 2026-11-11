@@ -4,7 +4,7 @@ Guidance for Claude Code in this repo. The README is the source of truth for how
 
 ## What this is
 
-Scrapes every Climate Designers chapter's public Luma calendar → `data/events.json` → (a) a static public site on GitHub Pages and (b) a create-only sync into a Notion database. Plain Node, no dependencies, no build step.
+Scrapes every Climate Designers chapter's public event page (Luma; Humanitix for Milan; Peatix for Japan) → `data/events.json` → (a) a static public site on GitHub Pages and (b) a create-only sync into a Notion database. Plain Node, no dependencies, no build step.
 
 ## Branches (important)
 
@@ -34,6 +34,7 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 ## Gotchas
 
 - **Luma blocks non-browser clients.** Since ~2026-10-14, `api.lu.ma` returns `429 "rate limit"` to Node's default `User-Agent`, even on the first request. `scrape.js` sends `LUMA_USER_AGENT` to get around this. If 429s come back, suspect Luma changed its blocking again, not real rate limiting. Compare with `curl -A "Mozilla/5.0 ..."`.
+- **Peatix's API is undocumented.** Found by reading Peatix's frontend JavaScript (`peatix-api.com/v4`). If Japan's events vanish, check the endpoints in the README still respond. Humanitix is read from page HTML (embedded data + JSON-LD), so a Humanitix redesign can break it the same way.
 - **Partial failures are silent.** If *some* chapters fail, they're logged and skipped, and the Action still passes. Only an *all*-chapters failure exits with an error (leaving `events.json` untouched, so the Action goes red). If a chapter's events go missing, check the scraper log for `Failed to scrape`.
 - Under `file://` the site won't load data (`fetch` restriction). Always use a local server.
 - Never commit `NOTION_TOKEN`. It lives in GitHub Actions secrets.
@@ -47,7 +48,7 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 - **Always dry-run (`DRY_RUN=1`) and show Brett the output before any live Notion write**, especially against the Climate Designers workspace, which other people use. For a first live write after a change, use `LIMIT=1`.
 - **Never ask Brett to paste a token into chat.** Have him load it with `read -s "NOTION_TOKEN?..." && export NOTION_TOKEN` in his own terminal. Tokens copied from Signal or Slack can carry an invisible extra character, which causes a 401 "API token is invalid". Check with `echo ${#NOTION_TOKEN}` (should be 50) and strip it with `tr -cd 'A-Za-z0-9_'`.
 - **Climate Designers workspace constraints:** Brett is a **Guest**. He can't move pages in from other workspaces or create integrations. Natalie (workspace owner) created the integration with **Read + Insert content only**, so it can't edit or delete rows. Any change that needs to *update* existing rows needs her to add that capability.
-- The automated database is **Luma-only** by design. The team's hand-maintained **"Event Tracking (Internal)"** (Brett and Yutieka; it includes non-Luma Asia chapters on connpass, Peatix, Eventbrite) is separate, and the sync never touches it. Don't hand-copy Internal rows into the automated database.
+- The automated database gets **every scraped chapter's** events, not just Luma (Brett decided 2026-11-11 to include Milan/Humanitix and Japan/Peatix). The team's hand-maintained **"Event Tracking (Internal)"** (Brett and Yutieka; it also covers connpass, Eventbrite) is separate, and the sync never touches it. Don't hand-copy Internal rows into the automated database.
 
 ## In progress / to do
 

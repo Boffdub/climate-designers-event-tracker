@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-11-11T19:58:49.095Z",
+  "generatedAt": "2026-11-11T23:15:59.113Z",
   "events": [
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Climate Designers Japan #1 気候変動課題にチャレンジするデザイナーのコミュニティはじめます。【オンライン・無料】",
+      "startAt": "2023-06-14T10:00:00Z",
+      "endAt": "2023-06-14T11:00:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/3596405/cover-Z0ZbdBTsktR9F9vgcZs4a3eMyuFMy3Fn.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/3596405",
+      "source": "peatix"
+    },
     {
       "chapter": "Los Angeles",
       "region": "North America",
@@ -119,6 +131,22 @@
       "geo": {
         "lat": 34.1210378,
         "lng": -118.2038147
+      }
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Climate Designers Japan 02",
+      "startAt": "2024-02-22T09:00:00Z",
+      "endAt": "2024-02-22T12:00:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/3844725/cover-Srp44uwDr9JZiv8TJEBdigDDCTZ1h9J9.png",
+      "location": "Rinne.bar, 台東区小島２丁目２１−２ 根岸ビル",
+      "url": "https://peatix.com/event/3844725",
+      "source": "peatix",
+      "geo": {
+        "lat": 35.7066198,
+        "lng": 139.7833496
       }
     },
     {
@@ -514,6 +542,22 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "\"From Soil to Soul\" Screening @Fabric",
+      "startAt": "2024-12-26T22:00:00Z",
+      "endAt": "2024-12-26T23:30:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4241549/cover-BYrZxZj77fwWVhFd5CAqAKZlu1Tm0NhJ.png",
+      "location": "Fabric, 東京都目黒区上目黒2-45-12 Nakame Gallery Street J3",
+      "url": "https://peatix.com/event/4241549",
+      "source": "peatix",
+      "geo": {
+        "lat": 35.641464,
+        "lng": 139.695579
+      }
+    },
+    {
       "chapter": "Boston",
       "region": "North America",
       "name": "Climate Designers February Meetup",
@@ -546,6 +590,22 @@
       }
     },
     {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "CLIMATE DESIGNERS MILAN - The Circular Plate: Food, Design, and Systemic Thinking",
+      "startAt": "2025-02-26T18:00:00.000Z",
+      "endAt": "2025-02-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/Yscs05dkTLenku5mrGsN@seo-500.jpg",
+      "location": "Logotel, Via Privata Giovanni Ventura, 15, 20134 Milano MI, Italy",
+      "url": "https://events.humanitix.com/climate-designers-milan-the-circular-plate-food-design-and-systemic-thinking",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.48448,
+        "lng": 9.2446175
+      }
+    },
+    {
       "chapter": "Los Angeles",
       "region": "North America",
       "name": "Climate Designers LA Meetup: Day at the Brand Library & Art Center",
@@ -572,6 +632,22 @@
       "location": null,
       "url": "https://luma.com/pr4vvq2h",
       "source": "luma"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Urban Regeneration: Living Cities, Thriving Communities",
+      "startAt": "2025-03-26T18:00:00.000Z",
+      "endAt": "2025-03-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/lq9CCN1vQiery9eU239z@seo-500.jpg",
+      "location": "Maize | Jakala, Piazza Velasca, 7, 20122 Milano MI, Italy",
+      "url": "https://events.humanitix.com/urban-regeneration-living-cities-thriving-communities",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4596128,
+        "lng": 9.1910265
+      }
     },
     {
       "chapter": "Seattle",
@@ -920,6 +996,22 @@
       "source": "luma"
     },
     {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "REWRITING THE CLIMATE NARRATIVE: Storytelling & Responsible Media for Action",
+      "startAt": "2025-05-21T22:00:00.000Z",
+      "endAt": "2025-05-21T23:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/vbnbhQvSZWOKJ9GJDDgV@seo-500.jpg",
+      "location": "Via Privata Giovanni Ventura, 15 Logotel, Via Privata Giovanni Ventura, 15, 20134 Milano MI, Italy",
+      "url": "https://events.humanitix.com/rewriting-the-climate-narrative",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.48447999999999,
+        "lng": 9.244617499999999
+      }
+    },
+    {
       "chapter": "New York City",
       "region": "North America",
       "name": "Climate Designers NYC x Balcones Recycling Tour",
@@ -933,6 +1025,22 @@
       "geo": {
         "lat": 40.6623901,
         "lng": -74.0097671
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Energy Ecosystems: How design can impact the change towards sustainable future.",
+      "startAt": "2025-06-25T17:00:00.000Z",
+      "endAt": "2025-06-25T18:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/KBshE7cnQbGdC19DQu1h@seo-500.jpg",
+      "location": "Politecnico di Milano, Dipartimento di Design, Via Giovanni Durando, 10, 20158 Milano MI, Italy",
+      "url": "https://events.humanitix.com/energy-ecosystems-how-design-can-impact-the-change-towards-sustainable-future",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.5041774,
+        "lng": 9.1642641
       }
     },
     {
@@ -1016,6 +1124,59 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：再開第一回！「モノの物語」を見ながらおしゃべりする会",
+      "startAt": "2025-10-08T11:30:00Z",
+      "endAt": "2025-10-08T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4590646/cover-RtmfV09eBuYRgp2LUH1hfyIiQ899frlI.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4590646",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "The Climate of Inequality",
+      "startAt": "2025-10-23T17:00:00.000Z",
+      "endAt": "2025-10-23T18:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/Ro1mrAGJRqi51uYpeNX2@seo-500.jpg",
+      "location": "Design Social Club -  Politecnico di Milano, Design Social Club -  Politecnico di Milano, Campus Bovisa - Via Durando 10, Building B9a",
+      "url": "https://events.humanitix.com/the-climate-of-inequality",
+      "source": "humanitix",
+      "geo": null
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：デザインが気候変動のためにできることを考えてみる【TechIE S2#3】",
+      "startAt": "2025-11-19T11:30:00Z",
+      "endAt": "2025-11-24T12:30:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4678201/cover-H79BuVXATRPKkTuZqhPmyk2u1lnNRU4J.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4678201",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "DESIGNING IN A MULTISPECIES WORLD",
+      "startAt": "2025-11-20T17:30:00.000Z",
+      "endAt": "2025-11-20T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/eEDzhBb3RmOAhBhFD1mG@seo-500.jpg",
+      "location": "Tangity - NTT DATA Design Studio   (low building, just next door to Poke House. ), Via Ernesto Calindri, 4, 20143 Milano MI, Italy",
+      "url": "https://events.humanitix.com/designing-in-a-multispecies-world",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4428048,
+        "lng": 9.162602999999999
+      }
+    },
+    {
       "chapter": "Bay Area",
       "region": "North America",
       "name": "Re-gift Exchange and Holiday Gathering",
@@ -1032,6 +1193,18 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：ありきりな思考を広げるためのフレームワーク「Thinknado」を試します【TechIE S2#4】",
+      "startAt": "2025-12-10T11:30:00Z",
+      "endAt": "2025-12-10T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4718446/cover-46d5zk9UY52kaZ0QP0cT6SoaAs9uQDCC.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4718446",
+      "source": "peatix"
+    },
+    {
       "chapter": "Chicago",
       "region": "North America",
       "name": "Climate Designers Chicago Kick-Off",
@@ -1045,6 +1218,34 @@
       "geo": {
         "lat": 41.9244127,
         "lng": -87.6348029
+      }
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：気候変動とAIの時代にデザイナーができること【TechIE S2#6】",
+      "startAt": "2026-02-18T11:30:00Z",
+      "endAt": "2026-03-18T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4881643/cover-RLRQ2MGqhfOCyYnWKzaCHEkr3V3BVfzl.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4881643",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Da Eco-Ansia a Eco-Azione: capire, affrontare, agire",
+      "startAt": "2026-03-05T17:30:00.000Z",
+      "endAt": "2026-03-05T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/lhR2kYKQmOH0rrDVMPxI@seo-500.jpg",
+      "location": "Cascina Nascosta, Viale Emilio Alemagna, 14, 20121 Milano MI, Italy",
+      "url": "https://events.humanitix.com/da-eco-ansia-a-eco-azione-capire-affrontare-agire",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4737073,
+        "lng": 9.1725557
       }
     },
     {
@@ -1090,6 +1291,22 @@
       "geo": {
         "lat": 40.6788308,
         "lng": -73.9831169
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Designing Decolonial Futures",
+      "startAt": "2026-03-26T17:30:00.000Z",
+      "endAt": "2026-03-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/e7c208e6-4169-415b-b35c-955de6f0816d.jpg@seo-500.jpg",
+      "location": "Politecnico di Milano - Fashion in Process Research Lab, Via Giovanni Durando, 10, 20158 Milano MI, Italy",
+      "url": "https://events.humanitix.com/designing-decolonial-futures",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.5042509,
+        "lng": 9.1656731
       }
     },
     {
@@ -1537,6 +1754,18 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "気候変動とデザインに関するサイトを作ろう第一回：インスピレーション集め【S2#7】",
+      "startAt": "2026-09-16T11:30:00Z",
+      "endAt": "2026-09-16T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/5156269/cover-2XoAxl7ZSXHlpojR0i14uzK6YBjkEzQ2.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/5156269",
+      "source": "peatix"
+    },
+    {
       "chapter": "Toronto",
       "region": "North America",
       "name": "Climate Book & Article Club: Regenerative Design",
@@ -1550,6 +1779,22 @@
       "geo": {
         "lat": 43.682232,
         "lng": -79.3918454
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Futures Literacy: The Hidden Skill Behind Climate Action",
+      "startAt": "2026-09-28T16:00:00.000Z",
+      "endAt": "2026-09-28T18:00:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/94b31215-c5bf-40dd-b319-c540eee1cee1.jpg@seo-500.jpg",
+      "location": "Maize, Piazza Velasca, 7, 20122 Milano MI, Italy",
+      "url": "https://events.humanitix.com/futures-literacy",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4596128,
+        "lng": 9.1910265
       }
     },
     {
@@ -1647,11 +1892,6 @@
   ],
   "flaggedChapters": [
     {
-      "name": "Japan",
-      "region": "Asia",
-      "reason": "Uses Peatix, not Luma. The group URL on file redirects to the Peatix homepage and the site is client-rendered, so it isn't scrapable via a simple HTTP request yet."
-    },
-    {
       "name": "Philippines",
       "region": "Asia",
       "reason": "No calendar link on file yet."
@@ -1660,11 +1900,6 @@
       "name": "Singapore",
       "region": "Asia",
       "reason": "No calendar link on file yet."
-    },
-    {
-      "name": "Milan",
-      "region": "Europe",
-      "reason": "Uses other platforms (e.g. Humanitix, Instagram) instead of Luma."
     }
   ]
 }

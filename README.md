@@ -1,6 +1,6 @@
 # Climate Designers Event Tracker
 
-Pulls upcoming and past events from every Climate Designers chapter's public Luma calendar into one place — for the internal team (Notion) and a public list site.
+Pulls upcoming and past events from every Climate Designers chapter's public event page (Luma, plus Humanitix for Milan and Peatix for Japan) into one place — for the internal team (Notion) and a public list site.
 
 **Live public site:** [https://boffdub.github.io/climate-designers-event-tracker/](https://boffdub.github.io/climate-designers-event-tracker/) (served from the `public-site` branch)
 
@@ -17,11 +17,18 @@ The North American Regional Lead previously checked each chapter's Luma/Peatix p
 
 ## How it works
 
-1. **`data/chapters.json`** — one entry per chapter: name, region, and either a `luma` source with a resolved `calendarApiId` (plus optional `approvedHosts` for host filtering), or a `manual` source with a `reason` the chapter isn't auto-scraped yet.
+1. **`data/chapters.json`** — one entry per chapter: name, region, and a `source`:
+   - `luma`: a resolved `calendarApiId` (plus optional `approvedHosts` for host filtering)
+   - `humanitix`: `humanitixHost` (the slug in `events.humanitix.com/host/<slug>`) and a `timezone` (Humanitix's structured data has no timezone name)
+   - `peatix`: `peatixGroupId` (the number in `peatix.com/group/<id>`)
+   - `manual`: a `reason` the chapter isn't auto-scraped yet
 2. **`scripts/scrape.js`** — plain Node script (no dependencies). For each `luma` chapter, calls Luma's public JSON API (`https://api.lu.ma/calendar/get-items?calendar_api_id=<id>&period=future|past`), merges and dedupes events, stores each event's Luma **`coverUrl`**, geocodes addresses via OpenStreetMap Nominatim (caching in `data/geocache.json`), and writes `data/events.json`. Host filter is **on by default**: keep an event if **any** Luma host matches that chapter's `approvedHosts` (co-hosted partner events still pass). `HOST_FILTER=review` logs kept/skipped without changing output; `HOST_FILTER=off` includes every calendar event. The global "Climate Designers" account doesn't count as a chapter host on its own (its org-wide events get added to chapter calendars), and a chapter's optional `alwaysIncludeEvents` list of Luma URLs keeps one-off exceptions.
+   - **Humanitix** chapters: reads the event list (slugs and coordinates) embedded in the host page, then each event page's schema.org JSON-LD block for the details.
+   - **Peatix** chapters: calls Peatix's undocumented API, which its own site uses (`https://peatix-api.com/v4/groups/<id>/upcoming-events` and `/past-events`, `?limit=200`, no login). It has no paging, so the scraper warns if a list hits the limit.
+   - Humanitix and Peatix pages belong to the chapter itself, so there's no host filter: every event is kept. Both platforms provide venue coordinates, so those events skip Nominatim.
 3. **`scripts/sync-notion.js`** — create-only sync of **new future** events from `data/events.json` into Notion (dedupe by Event URL). Fills name, date, chapter, format, location, URL, and quarter; leaves **Category** and **Place** blank for humans.
 4. **`.github/workflows/update-events.yml`** — daily job scheduled for `0 13 * * *` UTC (9:00 AM Eastern during daylight saving). GitHub delays scheduled jobs when it's busy, so in practice runs have started between about 1 and 5 PM Eastern. Checks out **`public-site`**, scrapes, syncs Notion, commits data there (so Pages stays fresh), then mirrors `data/events.json` / `data/geocache.json` onto **`main`**. Also runnable from the Actions tab (`workflow_dispatch`).
-5. **`index.html` / `style.css` / `app.js`** (on `public-site`) — static frontend that fetches `data/events.json` and renders a list of event cards (chapter gradients, cover thumbnails, region/chapter filters, chevron accordion for Upcoming/Past). Cards link out to Luma.
+5. **`index.html` / `style.css` / `app.js`** (on `public-site`) — static frontend that fetches `data/events.json` and renders a list of event cards (chapter gradients, cover thumbnails, region/chapter filters, chevron accordion for Upcoming/Past). Cards link out to the event's own page (Luma, Humanitix, or Peatix).
 
 No build step, no backend server — everything is static files plus a scheduled script.
 
@@ -45,7 +52,7 @@ Then open `http://localhost:8934/` (not the `index.html` file directly — `fetc
 
 ### Notion sync
 
-Always scrape **before** syncing so Notion sees the latest Luma data:
+Always scrape **before** syncing so Notion sees the latest event data:
 
 ```bash
 node scripts/scrape.js
@@ -91,9 +98,9 @@ After secrets are set, use **Actions → Update events → Run workflow** to tes
 
 Both paths are in play:
 
-- **Notion** (Event Tracking (automated), Climate Designers workspace): Luma events only, added daily; visibility stays limited to the workspace. Category and Place still need a human. The team's hand-maintained **Event Tracking (Internal)** database remains the complete record, including non-Luma events (e.g. Asia chapters on connpass, Peatix, or Eventbrite). The sync never reads or writes it.
-- **Public site** (GitHub Pages): wider visibility for chapter events; cards open the Luma page.
+- **Notion** (Event Tracking (automated), Climate Designers workspace): every scraped chapter's new future events (Luma, Humanitix, Peatix), added daily; visibility stays limited to the workspace. Category and Place still need a human. The team's hand-maintained **Event Tracking (Internal)** database is separate and also covers platforms the scraper doesn't (e.g. connpass, Eventbrite). The sync never reads or writes it.
+- **Public site** (GitHub Pages): wider visibility for chapter events; cards open the event's own page.
 
 ## Chapters not yet auto-scraped
 
-See the `manual`-source entries in `data/chapters.json` for current reasons (Japan/Peatix, Philippines, Singapore, Milan, etc.).
+See the `manual`-source entries in `data/chapters.json` for current reasons (Philippines, Singapore).
