@@ -81,6 +81,7 @@ function normalizeLumaEvent(entry, chapter) {
     startAt: event.start_at,
     endAt: event.end_at,
     timezone: event.timezone,
+    coverUrl: event.cover_url || null, 
     location,
     url: `https://luma.com/${event.url}`,
     source: 'luma',
@@ -125,6 +126,152 @@ async function scrapeLumaChapter(chapter, filterMode) {
   return { events: [...byId.values()], decisions };
 }
 
+// Humanitix and Peatix pages belong to the chapter itself (no shared calendar that other
+// people add events to), so every event is kept; there's no approvedHosts check.
+function ownPageDecisions(events, chapter, label) {
+  return events.map((e) => ({
+    chapter: chapter.name,
+    name: e.name,
+    url: e.url,
+    hosts: [],
+    action: 'kept',
+    matchedHost: label,
+  }));
+}
+
+// Text inside the JSON-LD block is HTML-escaped (e.g. "&amp;"); turn it back into plain text.
+function decodeHtmlEntities(text) {
+  return (text || '')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&');
+}
+
+// "45.4596128, 9.1910265" or "35.641464,139.695579" → { lat, lng }
+function parseLatLng(text) {
+  const parts = (text || '').split(',').map((s) => parseFloat(s));
+  if (parts.length !== 2 || parts.some((n) => Number.isNaN(n))) return null;
+  return { lat: parts[0], lng: parts[1] };
+}
+
+async function fetchText(url) {
+  const res = await fetch(url, { headers: { 'User-Agent': LUMA_USER_AGENT } });
+  if (!res.ok) throw new Error(`Request failed (${res.status}) for ${url}`);
+  return res.text();
+}
+
+// Humanitix: the host page lists every event (upcoming and past) in data embedded in the
+// page; we only take each event's slug and coordinates from it. The details come from each
+// event page's schema.org JSON-LD block, a standard format Humanitix keeps stable for Google.
+async function scrapeHumanitixChapter(chapter) {
+  const hostHtml = await fetchText(`https://events.humanitix.com/host/${chapter.humanitixHost}`);
+
+  // Each event in the embedded data looks like {id:"…",slug:"…",title:"…", … latLng:"…" …}.
+  const slugMatches = [...hostHtml.matchAll(/slug:"([^"]+)",title:/g)];
+  const slugs = [];
+  const geoBySlug = new Map();
+  slugMatches.forEach((m, i) => {
+    const slug = m[1];
+    if (geoBySlug.has(slug)) return; // same event can appear in more than one list
+    const end = i + 1 < slugMatches.length ? slugMatches[i + 1].index : hostHtml.length;
+    const latLng = hostHtml.slice(m.index, end).match(/latLng:"([^"]+)"/);
+    slugs.push(slug);
+    geoBySlug.set(slug, latLng ? parseLatLng(latLng[1]) : null);
+  });
+
+  const events = [];
+  for (const slug of slugs) {
+    const html = await fetchText(`https://events.humanitix.com/${slug}`);
+    const blocks = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
+    const data = blocks.map((b) => JSON.parse(b[1])).find((d) => d['@type'] === 'Event');
+    if (!data) throw new Error(`No Event JSON-LD found on Humanitix page ${slug}`);
+
+    const place = data.location || {};
+    const online = /Online/.test(data.eventAttendanceMode || '') || place['@type'] === 'VirtualLocation';
+    const street = place.address && place.address.streetAddress;
+    const venue = decodeHtmlEntities(place.name).trim();
+    const location = online ? 'Virtual' : [venue, street].filter(Boolean).join(', ') || null;
+
+    events.push({
+      chapter: chapter.name,
+      region: chapter.region,
+      name: decodeHtmlEntities(data.name).trim(),
+      startAt: new Date(data.startDate).toISOString(),
+      endAt: data.endDate ? new Date(data.endDate).toISOString() : null,
+      timezone: chapter.timezone || null,
+      coverUrl: data.image || null,
+      location,
+      url: `https://events.humanitix.com/${slug}`,
+      source: 'humanitix',
+      geo: online ? undefined : geoBySlug.get(slug) || undefined,
+    });
+  }
+
+  return { events, decisions: ownPageDecisions(events, chapter, '(chapter Humanitix page)') };
+}
+
+// Peatix: the group page is filled in by JavaScript from Peatix's own (undocumented) API.
+// These two endpoints return the group's events as JSON with no login needed.
+const PEATIX_LIMIT = 200;
+
+async function fetchPeatixEvents(groupId, list) {
+  const url = `https://peatix-api.com/v4/groups/${groupId}/${list}?limit=${PEATIX_LIMIT}`;
+  const res = await fetch(url, { headers: { Accept: 'application/json', 'User-Agent': LUMA_USER_AGENT } });
+  if (!res.ok) throw new Error(`Peatix API request failed (${res.status}) for group ${groupId} ${list}`);
+  const body = await res.json();
+  const items = body.data || [];
+  // The API has no "next page" option, only a size limit; warn if we might be missing some.
+  if (items.length >= PEATIX_LIMIT) {
+    console.warn(`Peatix group ${groupId} ${list} returned ${items.length} events; some may be cut off.`);
+  }
+  return items;
+}
+
+function normalizePeatixEvent(item, chapter) {
+  const venue = item.locationSettings || {};
+  const online = item.locationType === 'online';
+  const location = online
+    ? 'Virtual'
+    : [venue.venueName, venue.venueAddress].filter(Boolean).join(', ') || null;
+
+  return {
+    chapter: chapter.name,
+    region: chapter.region,
+    name: item.name,
+    startAt: item.start.utc,
+    endAt: (item.end && item.end.utc) || null,
+    timezone: item.start.timezone || null,
+    coverUrl: (item.details && item.details.coverUrl) || null,
+    location,
+    url: `https://peatix.com/event/${item.id}`,
+    source: 'peatix',
+    geo: online ? undefined : parseLatLng(venue.venueGeoCoordinates) || undefined,
+  };
+}
+
+async function scrapePeatixChapter(chapter) {
+  const [upcoming, past] = await Promise.all([
+    fetchPeatixEvents(chapter.peatixGroupId, 'upcoming-events'),
+    fetchPeatixEvents(chapter.peatixGroupId, 'past-events'),
+  ]);
+
+  const byId = new Map();
+  for (const item of [...upcoming, ...past]) {
+    byId.set(item.id, normalizePeatixEvent(item, chapter));
+  }
+  const events = [...byId.values()];
+  return { events, decisions: ownPageDecisions(events, chapter, '(chapter Peatix group)') };
+}
+
+// Which scraper handles each chapter "source" in chapters.json.
+const SCRAPERS = {
+  luma: scrapeLumaChapter,
+  humanitix: scrapeHumanitixChapter,
+  peatix: scrapePeatixChapter,
+};
+
 function loadGeocache() {
   try {
     return JSON.parse(fs.readFileSync(GEOCACHE_PATH, 'utf8'));
@@ -168,6 +315,7 @@ async function geocodeEvents(events) {
 
   for (const event of events) {
     if (!event.location || event.location === 'Virtual') continue;
+    if (event.geo) continue; // platform already gave exact coordinates (Humanitix, Peatix)
 
     if (!(event.location in cache)) {
       cache[event.location] = await geocodeAddress(event.location);
@@ -202,24 +350,25 @@ async function main() {
   const filterMode = hostFilterMode();
   const chapters = JSON.parse(fs.readFileSync(CHAPTERS_PATH, 'utf8'));
 
-  const lumaChapters = chapters.filter((c) => c.source === 'luma');
+  const scrapedChapters = chapters.filter((c) => SCRAPERS[c.source]);
   const manualChapters = chapters.filter((c) => c.source === 'manual');
 
   const results = await Promise.all(
-    lumaChapters.map(async (chapter) => {
+    scrapedChapters.map(async (chapter) => {
       try {
-        return await scrapeLumaChapter(chapter, filterMode);
+        return await SCRAPERS[chapter.source](chapter, filterMode);
       } catch (err) {
-        console.error(`Failed to scrape ${chapter.name}: ${err.message}`);
+        console.error(`Failed to scrape ${chapter.name} (${chapter.source}): ${err.message}`);
         return { events: [], decisions: [], failed: true };
       }
     })
   );
 
-  // If every chapter failed, Luma is likely blocking us. Exit with an error instead of
-  // overwriting events.json with an empty list (which would blank the public site).
-  if (lumaChapters.length > 0 && results.every((r) => r.failed)) {
-    throw new Error('All Luma chapters failed to scrape; leaving events.json unchanged.');
+  // If every chapter failed, something is blocking us (most likely Luma, which has most
+  // chapters). Exit with an error instead of overwriting events.json with an empty list
+  // (which would blank the public site).
+  if (scrapedChapters.length > 0 && results.every((r) => r.failed)) {
+    throw new Error('All chapters failed to scrape; leaving events.json unchanged.');
   }
 
   const allDecisions = results.flatMap((r) => r.decisions);

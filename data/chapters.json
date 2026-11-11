@@ -99,8 +99,8 @@
   {
     "name": "Japan",
     "region": "Asia",
-    "source": "manual",
-    "reason": "Uses Peatix, not Luma. The group URL on file redirects to the Peatix homepage and the site is client-rendered, so it isn't scrapable via a simple HTTP request yet."
+    "source": "peatix",
+    "peatixGroupId": 12246060
   },
   {
     "name": "Philippines",
@@ -117,7 +117,8 @@
   {
     "name": "Milan",
     "region": "Europe",
-    "source": "manual",
-    "reason": "Uses other platforms (e.g. Humanitix, Instagram) instead of Luma."
+    "source": "humanitix",
+    "humanitixHost": "climate-designers-milan",
+    "timezone": "Europe/Rome"
   }
 ]

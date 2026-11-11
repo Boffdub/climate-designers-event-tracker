@@ -1,5 +1,5 @@
 /**
- * Sync scraped Luma events into a Notion database (create-only).
+ * Sync scraped events (Luma, Humanitix, Peatix) into a Notion database (create-only).
  *
  * Reads data/events.json (from scrape.js), skips URLs already in Notion,
  * and creates rows for new future events.
