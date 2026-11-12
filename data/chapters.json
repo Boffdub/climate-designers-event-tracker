@@ -111,8 +111,9 @@
   {
     "name": "Singapore",
     "region": "Asia",
-    "source": "manual",
-    "reason": "No calendar link on file yet."
+    "source": "eventbrite",
+    "eventbriteSite": "www.eventbrite.sg",
+    "eventbriteOrganizerId": "61289382373"
   },
   {
     "name": "Milan",

@@ -4,7 +4,7 @@ Guidance for Claude Code in this repo. The README is the source of truth for how
 
 ## What this is
 
-Scrapes every Climate Designers chapter's public event page (Luma; Humanitix for Milan; Peatix for Japan) → `data/events.json` → (a) a static public site on GitHub Pages and (b) a create-only sync into a Notion database. Plain Node, no dependencies, no build step.
+Scrapes every Climate Designers chapter's public event page (Luma; Humanitix for Milan; Peatix for Japan; Eventbrite for Singapore) → `data/events.json` → (a) a static public site on GitHub Pages and (b) a create-only sync into a Notion database. Plain Node, no dependencies, no build step.
 
 ## Branches (important)
 
@@ -34,7 +34,7 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 ## Gotchas
 
 - **Luma blocks non-browser clients.** Since ~2026-10-14, `api.lu.ma` returns `429 "rate limit"` to Node's default `User-Agent`, even on the first request. `scrape.js` sends `LUMA_USER_AGENT` to get around this. If 429s come back, suspect Luma changed its blocking again, not real rate limiting. Compare with `curl -A "Mozilla/5.0 ..."`.
-- **Peatix's API is undocumented.** Found by reading Peatix's frontend JavaScript (`peatix-api.com/v4`). If Japan's events vanish, check the endpoints in the README still respond. Humanitix is read from page HTML (embedded data + JSON-LD), so a Humanitix redesign can break it the same way.
+- **Peatix's and Eventbrite's APIs are undocumented.** Both found by reading the sites' frontend JavaScript (`peatix-api.com/v4`; Eventbrite's `/organizer-profile/api/organizers/...`). If Japan's or Singapore's events vanish, check the endpoints in the README still respond. Eventbrite's older `/org/<id>/showmore/` endpoint is blocked (403). Humanitix is read from page HTML (embedded data + JSON-LD), so a Humanitix redesign can break it the same way.
 - **Partial failures are silent.** If *some* chapters fail, they're logged and skipped, and the Action still passes. Only an *all*-chapters failure exits with an error (leaving `events.json` untouched, so the Action goes red). If a chapter's events go missing, check the scraper log for `Failed to scrape`.
 - Under `file://` the site won't load data (`fetch` restriction). Always use a local server.
 - Never commit `NOTION_TOKEN`. It lives in GitHub Actions secrets.
@@ -59,6 +59,10 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 ## In progress / to do
 
 **Script cleanup (proposed, not approved yet):** make `NOTION_DATABASE_ID` required in `sync-notion.js` (`requireEnv`) and drop the `DEFAULT_DATABASE_ID` fallback, so a local run can never silently target a database nobody chose. Bundle it with the Place change below, and update the README's database table when it lands.
+
+**Before the next backfill: add a duplicate warning.** Dedupe is by `Event URL` only. The 2026-11-11 Japan/Milan backfill created 2 duplicates of rows someone had hand-entered with a different URL (Feb 18 Tech Inspiration Espresso; Mar 5 Da Eco-Ansia), which Brett is removing by hand (the integration can't delete). Idea: in backfill mode, flag (not skip) events whose chapter + date already exist in Notion, so the dry run shows them.
+
+**Backfills:** run them from GitHub (Actions → "Backfill Notion (manual)"), not locally. That uses the `NOTION_TOKEN` secret, so Brett never handles the token; his local copy of Natalie's token didn't work (54 chars, 401 even after cleanup). Steps: dry run → limit 1 → limit 0. Done so far: Japan + Milan, since 2026-01-01 (2026-11-11).
 
 **If Internal and automated are ever merged** (e.g. the sync writes into Internal): first add a dedupe fallback (same `Event date` + same name), because URLs differ between trackers (e.g. Ripple Effects Mapping: luma.com in Test, givebutter in Internal).
 

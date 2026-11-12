@@ -265,11 +265,96 @@ async function scrapePeatixChapter(chapter) {
   return { events, decisions: ownPageDecisions(events, chapter, '(chapter Peatix group)') };
 }
 
+// How far `timeZone` is ahead of UTC at a given moment, in milliseconds (e.g. +8h for Singapore).
+function timeZoneOffsetMs(utcMs, timeZone) {
+  const parts = {};
+  const fmt = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hourCycle: 'h23',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  for (const p of fmt.formatToParts(utcMs)) parts[p.type] = Number(p.value);
+  const wallClockAsUtc = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
+  return wallClockAsUtc - utcMs;
+}
+
+// "2026-11-28" + "13:30:00" in "Asia/Singapore" → "2026-11-28T05:30:00.000Z"
+function localTimeToUtcIso(date, time, timeZone) {
+  const guess = Date.parse(`${date}T${time || '00:00:00'}Z`);
+  return new Date(guess - timeZoneOffsetMs(guess, timeZone)).toISOString();
+}
+
+// Eventbrite: the organizer page loads its event lists from these JSON endpoints (found in
+// the page's JavaScript; not a documented API). Times come as local date + time + timezone.
+async function fetchEventbriteEvents(chapter, list) {
+  const base = `https://${chapter.eventbriteSite}/organizer-profile/api/organizers/${chapter.eventbriteOrganizerId}/${list}/`;
+  const all = [];
+  for (let page = 1; page <= 20; page++) {
+    const res = await fetch(`${base}?page=${page}&pageSize=50`, {
+      headers: { Accept: 'application/json', 'User-Agent': LUMA_USER_AGENT },
+    });
+    if (!res.ok) throw new Error(`Eventbrite request failed (${res.status}) for ${chapter.name} ${list}`);
+    const body = await res.json();
+    all.push(...(body.events || []));
+    if (!body.hasMore) break;
+  }
+  return all;
+}
+
+function normalizeEventbriteEvent(item, chapter) {
+  const venue = item.primary_venue || {};
+  const address = venue.address || {};
+  const online = Boolean(item.is_online_event);
+  const location = online
+    ? 'Virtual'
+    : [venue.name, address.localized_address_display].filter(Boolean).join(', ') || null;
+  const startAt = localTimeToUtcIso(item.start_date, item.start_time, item.timezone);
+  const endAt = item.end_date ? localTimeToUtcIso(item.end_date, item.end_time, item.timezone) : null;
+  const lat = parseFloat(address.latitude);
+  const lng = parseFloat(address.longitude);
+
+  return {
+    chapter: chapter.name,
+    region: chapter.region,
+    name: item.name,
+    startAt,
+    // The list API reports end = start for events that clearly run longer; treat that as unknown.
+    endAt: endAt && endAt !== startAt ? endAt : null,
+    timezone: item.timezone || null,
+    coverUrl: (item.image && item.image.url) || null,
+    location,
+    url: item.url,
+    source: 'eventbrite',
+    geo: !online && !Number.isNaN(lat) && !Number.isNaN(lng) ? { lat, lng } : undefined,
+  };
+}
+
+async function scrapeEventbriteChapter(chapter) {
+  const [upcoming, past] = await Promise.all([
+    fetchEventbriteEvents(chapter, 'events'),
+    fetchEventbriteEvents(chapter, 'past-events'),
+  ]);
+
+  const byId = new Map();
+  for (const item of [...upcoming, ...past]) {
+    if (item.is_cancelled) continue;
+    byId.set(item.id, normalizeEventbriteEvent(item, chapter));
+  }
+  const events = [...byId.values()];
+  return { events, decisions: ownPageDecisions(events, chapter, '(chapter Eventbrite page)') };
+}
+
 // Which scraper handles each chapter "source" in chapters.json.
 const SCRAPERS = {
   luma: scrapeLumaChapter,
   humanitix: scrapeHumanitixChapter,
   peatix: scrapePeatixChapter,
+  eventbrite: scrapeEventbriteChapter,
 };
 
 function loadGeocache() {
