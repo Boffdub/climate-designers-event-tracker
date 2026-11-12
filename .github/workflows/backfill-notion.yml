@@ -1,0 +1,57 @@
+name: Backfill Notion (manual)
+
+# One-time backfill of a chapter's PAST events into Notion, e.g. when a chapter is first
+# scraped. Run it from the Actions tab: "Backfill Notion (manual)" → "Run workflow".
+# Start with "Dry run" ticked (writes nothing), then LIMIT 1, then the rest.
+# Uses the same NOTION_TOKEN / NOTION_DATABASE_ID secrets as the daily job.
+# It does not scrape or commit anything; it reads the data/events.json already on public-site.
+
+on:
+  workflow_dispatch:
+    inputs:
+      chapters:
+        description: 'Chapters to backfill, comma-separated, as in chapters.json (e.g. Japan,Milan)'
+        required: true
+        type: string
+      since:
+        description: 'Include their past events on/after this date (YYYY-MM-DD)'
+        required: true
+        default: '2026-01-01'
+        type: string
+      dry_run:
+        description: 'Dry run: only print what would be created (untick to write to Notion)'
+        required: true
+        default: true
+        type: boolean
+      limit:
+        description: 'Max rows to create (0 = no limit; use 1 for a first live test)'
+        required: true
+        default: '0'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: public-site
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Inputs are passed as env vars (not pasted into the script) so odd input text
+      # can't change the command that runs.
+      - name: Backfill Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          BACKFILL_CHAPTERS: ${{ inputs.chapters }}
+          BACKFILL_SINCE: ${{ inputs.since }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          LIMIT: ${{ inputs.limit }}
+        run: node scripts/sync-notion.js

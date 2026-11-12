@@ -12,6 +12,12 @@
  *   DRY_RUN=1             Print planned creates; do not write to Notion
  *   LIMIT=15              Max new future events to create (0 = no limit)
  *
+ * One-time backfill of past events (e.g. when a chapter is first scraped).
+ * Both must be set together; NOTION_DATABASE_ID must also be set explicitly:
+ *   BACKFILL_CHAPTERS=Japan,Milan   Chapters (names as in chapters.json)
+ *   BACKFILL_SINCE=2026-01-01       Include their past events on/after this date
+ * Future events for all chapters are still included as normal.
+ *
  * Examples:
  *   DRY_RUN=1 NOTION_TOKEN=ntn_... node scripts/sync-notion.js
  *   NOTION_TOKEN=ntn_... LIMIT=15 node scripts/sync-notion.js
@@ -203,12 +209,45 @@ async function createNotionEvent(token, databaseId, event) {
   });
 }
 
-function loadFutureEvents() {
+/** Returns null when not backfilling, else { chapters: Set, since: Date }. */
+function backfillOptions(events) {
+  const chaptersEnv = (process.env.BACKFILL_CHAPTERS || '').trim();
+  const sinceEnv = (process.env.BACKFILL_SINCE || '').trim();
+  if (!chaptersEnv && !sinceEnv) return null;
+  if (!chaptersEnv || !sinceEnv) {
+    throw new Error('Set BACKFILL_CHAPTERS and BACKFILL_SINCE together (or neither).');
+  }
+  // A backfill writes many rows at once; never let it fall back to the default database.
+  requireEnv('NOTION_DATABASE_ID');
+
+  const since = new Date(`${sinceEnv}T00:00:00Z`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(sinceEnv) || Number.isNaN(since.getTime())) {
+    throw new Error(`BACKFILL_SINCE must be a date like 2026-01-01 (got "${sinceEnv}")`);
+  }
+
+  const chapters = new Set(chaptersEnv.split(',').map((s) => s.trim()).filter(Boolean));
+  const known = new Set(events.map((e) => e.chapter));
+  const unknown = [...chapters].filter((c) => !known.has(c));
+  if (unknown.length) {
+    // Catches typos like "Phillipines", which would otherwise silently match nothing.
+    throw new Error(`Unknown BACKFILL_CHAPTERS: ${unknown.join(', ')}. Known: ${[...known].sort().join(', ')}`);
+  }
+  return { chapters, since };
+}
+
+function loadEventsToSync() {
   const data = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf8'));
+  const events = (data.events || []).filter((e) => e.url);
   const now = Date.now();
-  return (data.events || [])
-    .filter((e) => e.url && new Date(e.startAt).getTime() > now)
-    .sort((a, b) => new Date(a.startAt) - new Date(b.startAt));
+  const backfill = backfillOptions(events);
+
+  const selected = events.filter((e) => {
+    const start = new Date(e.startAt).getTime();
+    if (start > now) return true; // normal daily behavior: all future events
+    return Boolean(backfill && backfill.chapters.has(e.chapter) && start >= backfill.since.getTime());
+  });
+
+  return { events: selected.sort((a, b) => new Date(a.startAt) - new Date(b.startAt)), backfill };
 }
 
 async function main() {
@@ -217,8 +256,13 @@ async function main() {
   const dryRun = isDryRun();
   const limit = createLimit();
 
-  const future = loadFutureEvents();
-  console.log(`Loaded ${future.length} future event(s) from ${EVENTS_PATH}`);
+  const { events: future, backfill } = loadEventsToSync();
+  if (backfill) {
+    console.log(
+      `BACKFILL: also including past events for ${[...backfill.chapters].join(', ')} since ${process.env.BACKFILL_SINCE.trim()}`
+    );
+  }
+  console.log(`Loaded ${future.length} event(s) to consider from ${EVENTS_PATH}`);
 
   const existing = await loadExistingEventUrls(token, databaseId);
   console.log(`Found ${existing.size} existing Event URL(s) in Notion`);

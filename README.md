@@ -85,6 +85,10 @@ Repo → **Settings → Secrets and variables → Actions**:
 | `NOTION_TOKEN` | Yes | Climate Designers integration token (`ntn_...`) |
 | `NOTION_DATABASE_ID` | Yes | `408498810e4180ad90bfcdfb254ac159` (Event Tracking (automated)) |
 
+### Backfilling past events (new chapters)
+
+The daily sync only adds **upcoming** events. When a chapter is first scraped, its past events can be added once with **Actions → Backfill Notion (manual) → Run workflow** (`.github/workflows/backfill-notion.yml`). It uses the same secrets, so nobody needs a local copy of the token. Inputs: chapters (e.g. `Japan,Milan`), a start date, a dry-run checkbox, and a row limit. Run it three times: dry run (check the log's "Would create" lines), then unticked with limit `1` (check the row in Notion), then limit `0`. It reads the `data/events.json` already on `public-site` and doesn't scrape or commit. Locally, the same thing is `BACKFILL_CHAPTERS=… BACKFILL_SINCE=YYYY-MM-DD` on `sync-notion.js` (which then also requires `NOTION_DATABASE_ID`).
+
 After secrets are set, use **Actions → Update events → Run workflow** to test. The scheduled job runs scrape → Notion sync (`LIMIT=0`) → commit to `public-site` → mirror data to `main`.
 
 ## Current status (as of 2026-11-02)
