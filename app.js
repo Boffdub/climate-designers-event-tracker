@@ -39,6 +39,7 @@ function chapterGradient(chapter) {
     Milan: 'var(--milan-chapter)',
     Chicago: 'var(--chicago-chapter)',
     Dubai: 'var(--dubai-chapter)',
+    Singapore: 'var(--singapore-chapter)',
   };
   return map[chapter] || 'var(--new-york-chapter)';
 }

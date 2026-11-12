@@ -41,6 +41,7 @@ const CHAPTER_TO_NOTION = {
   'Los Angeles': 'Los Angeles Chapter',
   Milan: 'Milan Chapter',
   'New York City': 'New York Chapter',
+  Singapore: 'Singapore Chapter',
   Toronto: 'Toronto Chapter',
 };
 

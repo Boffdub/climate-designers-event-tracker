@@ -20,6 +20,7 @@
   --milan-chapter: linear-gradient(#00BDFF 0%, #5E44F5 100%);
   --chicago-chapter: linear-gradient(#D21BFF 0%, #F68DFF 100%);
   --dubai-chapter: linear-gradient(#FF3C6B 0%, #FF9555 100%);
+  --singapore-chapter: linear-gradient(#FF7C00 0%, #FFB154 100%);
 }
 
 * {
