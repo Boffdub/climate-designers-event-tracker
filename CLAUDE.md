@@ -60,9 +60,9 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 
 **Script cleanup (proposed, not approved yet):** make `NOTION_DATABASE_ID` required in `sync-notion.js` (`requireEnv`) and drop the `DEFAULT_DATABASE_ID` fallback, so a local run can never silently target a database nobody chose. Bundle it with the Place change below, and update the README's database table when it lands.
 
-**Before the next backfill: add a duplicate warning.** Dedupe is by `Event URL` only. The 2026-11-11 Japan/Milan backfill created 2 duplicates of rows someone had hand-entered with a different URL (Feb 18 Tech Inspiration Espresso; Mar 5 Da Eco-Ansia), which Brett is removing by hand (the integration can't delete). Idea: in backfill mode, flag (not skip) events whose chapter + date already exist in Notion, so the dry run shows them.
+**Before the next backfill: add a duplicate warning.** Dedupe is by `Event URL` only. The 2026-11-11 Japan/Milan backfill created 2 duplicates of rows someone had hand-entered with a different URL (Feb 18 Tech Inspiration Espresso; Mar 5 Da Eco-Ansia), which Brett removed by hand (the integration can't delete). Idea: in backfill mode, flag (not skip) events whose chapter + date already exist in Notion, so the dry run shows them.
 
-**Backfills:** run them from GitHub (Actions → "Backfill Notion (manual)"), not locally. That uses the `NOTION_TOKEN` secret, so Brett never handles the token; his local copy of Natalie's token didn't work (54 chars, 401 even after cleanup). Steps: dry run → limit 1 → limit 0. Done so far: Japan + Milan, since 2026-01-01 (2026-11-11).
+**Backfills:** run them from GitHub (Actions → "Backfill Notion (manual)"), not locally. That uses the `NOTION_TOKEN` secret, so Brett never handles the token; his local copy of Natalie's token didn't work (54 chars, 401 even after cleanup). Steps: dry run → limit 1 → limit 0. Done so far (all since 2026-01-01, on 2026-11-11): Japan + Milan; Singapore (1 event, Decolonising Design).
 
 **If Internal and automated are ever merged** (e.g. the sync writes into Internal): first add a dedupe fallback (same `Event date` + same name), because URLs differ between trackers (e.g. Ripple Effects Mapping: luma.com in Test, givebutter in Internal).
 
