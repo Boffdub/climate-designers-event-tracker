@@ -40,6 +40,12 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 - Never commit `NOTION_TOKEN`. It lives in GitHub Actions secrets.
 - **Code style: single quotes, no formatter.** Brett's VS Code had format-on-save (Prettier) reformat whole files; `.vscode/settings.json` (local, uncommitted) turns it off here. If a diff shows mass quote/line-wrap changes, that's the formatter. Keep logic changes separate from style churn.
 
+## Chapter colors (public site)
+
+- Each chapter's card gradient is a `--<chapter>-chapter` variable in `style.css`, mapped by chapter name in `chapterGradient()` in `app.js`. A chapter missing from the map falls back to the NYC gradient. Seattle has no color yet (it and Philippines may close soon).
+- The hex values come from the chapters' official brand gradients (Brett copies them from Figma). Don't suggest changing them, even when two look alike (e.g. Dubai and Bengaluru).
+- The site's gradients run top to bottom (no angle), unlike the diagonal ones in the official artwork. That's intentional; leave them as is.
+
 ## Notion
 
 - `sync-notion.js` is **create-only** (dedupes by `Event URL`, never edits or deletes). It expects these properties on the target database: `Event name` (title), `Event URL`, `Event date`, `Quarter` (select), `Chapter/Hub` (select), `Format` (select), `Location`. Category and Place are left blank for humans.

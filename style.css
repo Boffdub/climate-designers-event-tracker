@@ -16,6 +16,10 @@
   --boston-chapter: linear-gradient(#00CEA6 0%, #00D47C 100%);
   --bay-area-chapter: linear-gradient(#00C1D6 0%, #7F86DB 100%);
   --los-angeles-chapter: linear-gradient(#5C7CE0 0%, #D01CA4 100%);
+  --japan-chapter: linear-gradient(#2CD74A 0%, #006AA1 100%);
+  --milan-chapter: linear-gradient(#00BDFF 0%, #5E44F5 100%);
+  --chicago-chapter: linear-gradient(#D21BFF 0%, #F68DFF 100%);
+  --dubai-chapter: linear-gradient(#FF3C6B 0%, #FF9555 100%);
 }
 
 * {

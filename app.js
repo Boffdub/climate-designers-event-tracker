@@ -35,7 +35,10 @@ function chapterGradient(chapter) {
     Boston: 'var(--boston-chapter)',
     'Bay Area': 'var(--bay-area-chapter)',
     'Los Angeles': 'var(--los-angeles-chapter)',
-    // add Seattle / Chicago / Dubai when you have CSS vars for them
+    Japan: 'var(--japan-chapter)',
+    Milan: 'var(--milan-chapter)',
+    Chicago: 'var(--chicago-chapter)',
+    Dubai: 'var(--dubai-chapter)',
   };
   return map[chapter] || 'var(--new-york-chapter)';
 }
