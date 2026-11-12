@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-11-11T19:58:49.095Z",
+  "generatedAt": "2026-11-12T20:37:31.925Z",
   "events": [
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Climate Labs: Co-creating feminine principles for ecological work",
+      "startAt": "2023-03-11T01:30:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F451740449%2F1409292370293%2F1%2Foriginal.20230222-050930?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2154%2C1077&s=3805a108d5ff57d61ce51796085458bd",
+      "location": "199149, Chemistry office 17A Jalan Pinang, Singapore, 199149",
+      "url": "https://www.eventbrite.sg/e/climate-labs-co-creating-feminine-principles-for-ecological-work-tickets-558472063977",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.302872,
+        "lng": 103.858209
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Climate outing: Sensory Odyssey, Into the Heart of Our Living World",
+      "startAt": "2023-06-10T01:30:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F525000919%2F1409292370293%2F1%2Foriginal.20230530-090010?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C1%2C1348%2C674&s=cf9f51b14cfc785de99de9b152ce2b75",
+      "location": "ArtScience Museum, 6 Bayfront Avenue, Singapore, 018974",
+      "url": "https://www.eventbrite.sg/e/climate-outing-sensory-odyssey-into-the-heart-of-our-living-world-tickets-645899070507",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2862738,
+        "lng": 103.8592663
+      }
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Climate Designers Japan #1 気候変動課題にチャレンジするデザイナーのコミュニティはじめます。【オンライン・無料】",
+      "startAt": "2023-06-14T10:00:00Z",
+      "endAt": "2023-06-14T11:00:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/3596405/cover-Z0ZbdBTsktR9F9vgcZs4a3eMyuFMy3Fn.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/3596405",
+      "source": "peatix"
+    },
     {
       "chapter": "Los Angeles",
       "region": "North America",
@@ -15,6 +59,54 @@
       "geo": {
         "lat": 34.0536909,
         "lng": -118.242766
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Biodiversity Collage with Climate Designers",
+      "startAt": "2023-09-23T02:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F542181189%2F1409292370293%2F1%2Foriginal.20230624-092300?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=12ae05ef45b9052ce3f8461414230660",
+      "location": "National Design Centre, 111 Middle Road, Singapore, 188969",
+      "url": "https://www.eventbrite.sg/e/biodiversity-collage-with-climate-designers-tickets-665801278547",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2986691,
+        "lng": 103.8533635
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "“Regeneration 2040” Film Screening with Climate Designers",
+      "startAt": "2023-09-23T05:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F542184259%2F1409292370293%2F1%2Foriginal.20230624-094830?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=21e12e43701abf7bea150bcf651cf7ab",
+      "location": "National Design Centre, 111 Middle Road, Singapore, 188969",
+      "url": "https://www.eventbrite.sg/e/regeneration-2040-film-screening-with-climate-designers-tickets-665985168567",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2986691,
+        "lng": 103.8533635
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Designing Regenerative Futures Workshop with Climate Designers",
+      "startAt": "2023-09-23T08:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F542185269%2F1409292370293%2F1%2Foriginal.20230624-095630?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=b87238dd18b257f3e4d932a4707d065d",
+      "location": "National Design Centre, 111 Middle Road, Singapore, 188969",
+      "url": "https://www.eventbrite.sg/e/designing-regenerative-futures-workshop-with-climate-designers-tickets-665985690127",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2986691,
+        "lng": 103.8533635
       }
     },
     {
@@ -122,6 +214,22 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Climate Designers Japan 02",
+      "startAt": "2024-02-22T09:00:00Z",
+      "endAt": "2024-02-22T12:00:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/3844725/cover-Srp44uwDr9JZiv8TJEBdigDDCTZ1h9J9.png",
+      "location": "Rinne.bar, 台東区小島２丁目２１−２ 根岸ビル",
+      "url": "https://peatix.com/event/3844725",
+      "source": "peatix",
+      "geo": {
+        "lat": 35.7066198,
+        "lng": 139.7833496
+      }
+    },
+    {
       "chapter": "New York City",
       "region": "North America",
       "name": "Visions of a Planet in Peril: Meet & Greet at the Environmental Crisis Posters Exhibit",
@@ -183,6 +291,22 @@
       "geo": {
         "lat": 47.5994717,
         "lng": -122.3313649
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Sustainability Struggles",
+      "startAt": "2024-03-09T02:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F710599899%2F1409292370293%2F1%2Foriginal.20240304-053831?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C2%2C1764%2C882&s=7b02844a1330457dfbd09394ebd6766d",
+      "location": "Chemistry Team, 17A Jalan Pinang, Singapore, 199149",
+      "url": "https://www.eventbrite.sg/e/sustainability-struggles-tickets-814735143747",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.302872,
+        "lng": 103.858209
       }
     },
     {
@@ -514,6 +638,22 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "\"From Soil to Soul\" Screening @Fabric",
+      "startAt": "2024-12-26T22:00:00Z",
+      "endAt": "2024-12-26T23:30:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4241549/cover-BYrZxZj77fwWVhFd5CAqAKZlu1Tm0NhJ.png",
+      "location": "Fabric, 東京都目黒区上目黒2-45-12 Nakame Gallery Street J3",
+      "url": "https://peatix.com/event/4241549",
+      "source": "peatix",
+      "geo": {
+        "lat": 35.641464,
+        "lng": 139.695579
+      }
+    },
+    {
       "chapter": "Boston",
       "region": "North America",
       "name": "Climate Designers February Meetup",
@@ -546,6 +686,22 @@
       }
     },
     {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "CLIMATE DESIGNERS MILAN - The Circular Plate: Food, Design, and Systemic Thinking",
+      "startAt": "2025-02-26T18:00:00.000Z",
+      "endAt": "2025-02-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/Yscs05dkTLenku5mrGsN@seo-500.jpg",
+      "location": "Logotel, Via Privata Giovanni Ventura, 15, 20134 Milano MI, Italy",
+      "url": "https://events.humanitix.com/climate-designers-milan-the-circular-plate-food-design-and-systemic-thinking",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.48448,
+        "lng": 9.2446175
+      }
+    },
+    {
       "chapter": "Los Angeles",
       "region": "North America",
       "name": "Climate Designers LA Meetup: Day at the Brand Library & Art Center",
@@ -572,6 +728,22 @@
       "location": null,
       "url": "https://luma.com/pr4vvq2h",
       "source": "luma"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Urban Regeneration: Living Cities, Thriving Communities",
+      "startAt": "2025-03-26T18:00:00.000Z",
+      "endAt": "2025-03-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/lq9CCN1vQiery9eU239z@seo-500.jpg",
+      "location": "Maize | Jakala, Piazza Velasca, 7, 20122 Milano MI, Italy",
+      "url": "https://events.humanitix.com/urban-regeneration-living-cities-thriving-communities",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4596128,
+        "lng": 9.1910265
+      }
     },
     {
       "chapter": "Seattle",
@@ -920,6 +1092,22 @@
       "source": "luma"
     },
     {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "REWRITING THE CLIMATE NARRATIVE: Storytelling & Responsible Media for Action",
+      "startAt": "2025-05-21T22:00:00.000Z",
+      "endAt": "2025-05-21T23:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/vbnbhQvSZWOKJ9GJDDgV@seo-500.jpg",
+      "location": "Via Privata Giovanni Ventura, 15 Logotel, Via Privata Giovanni Ventura, 15, 20134 Milano MI, Italy",
+      "url": "https://events.humanitix.com/rewriting-the-climate-narrative",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.48447999999999,
+        "lng": 9.244617499999999
+      }
+    },
+    {
       "chapter": "New York City",
       "region": "North America",
       "name": "Climate Designers NYC x Balcones Recycling Tour",
@@ -933,6 +1121,22 @@
       "geo": {
         "lat": 40.6623901,
         "lng": -74.0097671
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Energy Ecosystems: How design can impact the change towards sustainable future.",
+      "startAt": "2025-06-25T17:00:00.000Z",
+      "endAt": "2025-06-25T18:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/KBshE7cnQbGdC19DQu1h@seo-500.jpg",
+      "location": "Politecnico di Milano, Dipartimento di Design, Via Giovanni Durando, 10, 20158 Milano MI, Italy",
+      "url": "https://events.humanitix.com/energy-ecosystems-how-design-can-impact-the-change-towards-sustainable-future",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.5041774,
+        "lng": 9.1642641
       }
     },
     {
@@ -984,6 +1188,38 @@
       }
     },
     {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "IMAGINE: Embracing Chaos and Possibility in a Planetary Emergency",
+      "startAt": "2025-09-13T09:30:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1071337633%2F1409292370293%2F1%2Foriginal.20250711-042604?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=d88cdd6ded88770b0637fb27e6e8e5b3",
+      "location": "ArtScience Museum, 6 Bayfront Avenue, Singapore, 018974",
+      "url": "https://www.eventbrite.sg/e/imagine-embracing-chaos-and-possibility-in-a-planetary-emergency-tickets-1482293221929",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2862738,
+        "lng": 103.8592663
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "imagine the present - a collective exploration on regenerative principles",
+      "startAt": "2025-09-14T04:30:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116101883%2F1409292370293%2F1%2Foriginal.20250906-104910?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&s=7ab475e0f3c291b852b64cdf63f78271",
+      "location": "Science Park Drive, Science Park Drive, Singapore",
+      "url": "https://www.eventbrite.sg/e/imagine-the-present-a-collective-exploration-on-regenerative-principles-tickets-1584491559909",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.2906904,
+        "lng": 103.7882884
+      }
+    },
+    {
       "chapter": "Bay Area",
       "region": "North America",
       "name": "Solarpunk Salon",
@@ -1016,6 +1252,75 @@
       }
     },
     {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "The Regenerative Strategy Lab",
+      "startAt": "2025-10-02T03:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Bangkok",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1122824383%2F1409292370293%2F1%2Foriginal.20250913-055427?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C1%2C3246%2C1623&s=8bf30656bde18bf9d53688abe31b4cca",
+      "location": "Bangkok 1899 at Ban Chao Phraya Thammasakmontri, 134 Nakhon Sawan Road, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+      "url": "https://www.eventbrite.sg/e/the-regenerative-strategy-lab-tickets-1673014815349",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 13.7573803,
+        "lng": 100.5082193
+      }
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：再開第一回！「モノの物語」を見ながらおしゃべりする会",
+      "startAt": "2025-10-08T11:30:00Z",
+      "endAt": "2025-10-08T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4590646/cover-RtmfV09eBuYRgp2LUH1hfyIiQ899frlI.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4590646",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "The Climate of Inequality",
+      "startAt": "2025-10-23T17:00:00.000Z",
+      "endAt": "2025-10-23T18:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/Ro1mrAGJRqi51uYpeNX2@seo-500.jpg",
+      "location": "Design Social Club -  Politecnico di Milano, Design Social Club -  Politecnico di Milano, Campus Bovisa - Via Durando 10, Building B9a",
+      "url": "https://events.humanitix.com/the-climate-of-inequality",
+      "source": "humanitix",
+      "geo": null
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：デザインが気候変動のためにできることを考えてみる【TechIE S2#3】",
+      "startAt": "2025-11-19T11:30:00Z",
+      "endAt": "2025-11-24T12:30:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4678201/cover-H79BuVXATRPKkTuZqhPmyk2u1lnNRU4J.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4678201",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "DESIGNING IN A MULTISPECIES WORLD",
+      "startAt": "2025-11-20T17:30:00.000Z",
+      "endAt": "2025-11-20T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/eEDzhBb3RmOAhBhFD1mG@seo-500.jpg",
+      "location": "Tangity - NTT DATA Design Studio   (low building, just next door to Poke House. ), Via Ernesto Calindri, 4, 20143 Milano MI, Italy",
+      "url": "https://events.humanitix.com/designing-in-a-multispecies-world",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4428048,
+        "lng": 9.162602999999999
+      }
+    },
+    {
       "chapter": "Bay Area",
       "region": "North America",
       "name": "Re-gift Exchange and Holiday Gathering",
@@ -1032,6 +1337,18 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：ありきりな思考を広げるためのフレームワーク「Thinknado」を試します【TechIE S2#4】",
+      "startAt": "2025-12-10T11:30:00Z",
+      "endAt": "2025-12-10T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4718446/cover-46d5zk9UY52kaZ0QP0cT6SoaAs9uQDCC.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4718446",
+      "source": "peatix"
+    },
+    {
       "chapter": "Chicago",
       "region": "North America",
       "name": "Climate Designers Chicago Kick-Off",
@@ -1045,6 +1362,34 @@
       "geo": {
         "lat": 41.9244127,
         "lng": -87.6348029
+      }
+    },
+    {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "Tech Inspiration Espresso + Climate Designers Japan ：気候変動とAIの時代にデザイナーができること【TechIE S2#6】",
+      "startAt": "2026-02-18T11:30:00Z",
+      "endAt": "2026-03-18T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/4881643/cover-RLRQ2MGqhfOCyYnWKzaCHEkr3V3BVfzl.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/4881643",
+      "source": "peatix"
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Da Eco-Ansia a Eco-Azione: capire, affrontare, agire",
+      "startAt": "2026-03-05T17:30:00.000Z",
+      "endAt": "2026-03-05T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/lhR2kYKQmOH0rrDVMPxI@seo-500.jpg",
+      "location": "Cascina Nascosta, Viale Emilio Alemagna, 14, 20121 Milano MI, Italy",
+      "url": "https://events.humanitix.com/da-eco-ansia-a-eco-azione-capire-affrontare-agire",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4737073,
+        "lng": 9.1725557
       }
     },
     {
@@ -1090,6 +1435,22 @@
       "geo": {
         "lat": 40.6788308,
         "lng": -73.9831169
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Designing Decolonial Futures",
+      "startAt": "2026-03-26T17:30:00.000Z",
+      "endAt": "2026-03-26T19:30:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/e7c208e6-4169-415b-b35c-955de6f0816d.jpg@seo-500.jpg",
+      "location": "Politecnico di Milano - Fashion in Process Research Lab, Via Giovanni Durando, 10, 20158 Milano MI, Italy",
+      "url": "https://events.humanitix.com/designing-decolonial-futures",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.5042509,
+        "lng": 9.1656731
       }
     },
     {
@@ -1537,6 +1898,18 @@
       }
     },
     {
+      "chapter": "Japan",
+      "region": "Asia",
+      "name": "気候変動とデザインに関するサイトを作ろう第一回：インスピレーション集め【S2#7】",
+      "startAt": "2026-09-16T11:30:00Z",
+      "endAt": "2026-09-16T12:10:00Z",
+      "timezone": "Asia/Tokyo",
+      "coverUrl": "https://cdn.peatix.com/event/5156269/cover-2XoAxl7ZSXHlpojR0i14uzK6YBjkEzQ2.png",
+      "location": "Virtual",
+      "url": "https://peatix.com/event/5156269",
+      "source": "peatix"
+    },
+    {
       "chapter": "Toronto",
       "region": "North America",
       "name": "Climate Book & Article Club: Regenerative Design",
@@ -1550,6 +1923,38 @@
       "geo": {
         "lat": 43.682232,
         "lng": -79.3918454
+      }
+    },
+    {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Decolonising Design",
+      "startAt": "2026-09-19T02:00:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193519700%2F1409292370293%2F1%2Foriginal.20260915-031404?h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&s=92afa3cdc293cc5cc14420ed073eddbc",
+      "location": "LASALLE College of the Arts, 1 McNally Street, Singapore, 187940",
+      "url": "https://www.eventbrite.sg/e/decolonising-design-tickets-1999448278625",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.3028763,
+        "lng": 103.8516068
+      }
+    },
+    {
+      "chapter": "Milan",
+      "region": "Europe",
+      "name": "Futures Literacy: The Hidden Skill Behind Climate Action",
+      "startAt": "2026-09-28T16:00:00.000Z",
+      "endAt": "2026-09-28T18:00:00.000Z",
+      "timezone": "Europe/Rome",
+      "coverUrl": "https://images.humanitix.com/i/94b31215-c5bf-40dd-b319-c540eee1cee1.jpg@seo-500.jpg",
+      "location": "Maize, Piazza Velasca, 7, 20122 Milano MI, Italy",
+      "url": "https://events.humanitix.com/futures-literacy",
+      "source": "humanitix",
+      "geo": {
+        "lat": 45.4596128,
+        "lng": 9.1910265
       }
     },
     {
@@ -1629,6 +2034,22 @@
       }
     },
     {
+      "chapter": "Singapore",
+      "region": "Asia",
+      "name": "Exploring Transition Design: Shaping the future we want",
+      "startAt": "2026-11-28T05:30:00.000Z",
+      "endAt": null,
+      "timezone": "Asia/Singapore",
+      "coverUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197740608%2F1409292370293%2F1%2Foriginal.20261111-032849?crop=focalpoint&fit=crop&h=230&w=460&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.037&fp-y=0.523&s=f307321cb643a22ffe6211637eabe34f",
+      "location": "The Foundry, 11 Prinsep Link, Singapore, 187949",
+      "url": "https://www.eventbrite.sg/e/exploring-transition-design-shaping-the-future-we-want-tickets-2004566023939",
+      "source": "eventbrite",
+      "geo": {
+        "lat": 1.3001569,
+        "lng": 103.8501777
+      }
+    },
+    {
       "chapter": "Toronto",
       "region": "North America",
       "name": "Climate Book & Article Club: December Meet (Topic TBD)",
@@ -1647,24 +2068,9 @@
   ],
   "flaggedChapters": [
     {
-      "name": "Japan",
-      "region": "Asia",
-      "reason": "Uses Peatix, not Luma. The group URL on file redirects to the Peatix homepage and the site is client-rendered, so it isn't scrapable via a simple HTTP request yet."
-    },
-    {
       "name": "Philippines",
       "region": "Asia",
       "reason": "No calendar link on file yet."
-    },
-    {
-      "name": "Singapore",
-      "region": "Asia",
-      "reason": "No calendar link on file yet."
-    },
-    {
-      "name": "Milan",
-      "region": "Europe",
-      "reason": "Uses other platforms (e.g. Humanitix, Instagram) instead of Luma."
     }
   ]
 }
