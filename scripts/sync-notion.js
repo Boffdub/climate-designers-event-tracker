@@ -1,8 +1,9 @@
 /**
- * Sync scraped events (Luma, Humanitix, Peatix) into a Notion database (create-only).
+ * Sync scraped events (Luma, Humanitix, Peatix, Eventbrite) into a Notion database (create-only).
  *
  * Reads data/events.json (from scrape.js), skips URLs already in Notion,
- * and creates rows for new future events.
+ * and creates rows for new future events. Fills Place (for the Map view) only from
+ * the platform's own venue coordinates; geocoded guesses leave it blank.
  *
  * Required env:
  *   NOTION_TOKEN          Integration secret (ntn_... / secret_...)
@@ -114,6 +115,24 @@ function mapFormat(event) {
   return null; // blank if we can't tell
 }
 
+/**
+ * Notion "Place" value (for the Map view) from the platform's own venue coordinates.
+ * Returns null for virtual events, events without coordinates, and geocoded guesses
+ * (geoApproximate): a blank Place tells a human to fill it; a wrong pin looks right.
+ */
+function mapPlace(event) {
+  if (!event.geo || event.geoApproximate || event.location === 'Virtual') return null;
+  const { lat, lng } = event.geo;
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  const address = event.location || '';
+  return {
+    lat,
+    lon: lng, // Notion calls it "lon"; our data calls it "lng"
+    name: address.split(',')[0].trim() || address,
+    address,
+  };
+}
+
 function mapEventToNotionProperties(event) {
   const dateStr = eventCalendarDate(event);
   const properties = {
@@ -149,7 +168,12 @@ function mapEventToNotionProperties(event) {
     };
   }
 
-  // Category and Place: leave blank (human judgment / unreliable from Luma)
+  const place = mapPlace(event);
+  if (place) {
+    properties.Place = { place };
+  }
+
+  // Category: leave blank (human judgment)
   return properties;
 }
 
@@ -204,10 +228,19 @@ async function loadExistingEventUrls(token, databaseId) {
 }
 
 async function createNotionEvent(token, databaseId, event) {
-  return notionRequest(token, 'POST', '/pages', {
-    parent: { database_id: databaseId },
-    properties: mapEventToNotionProperties(event),
-  });
+  const properties = mapEventToNotionProperties(event);
+  const create = () =>
+    notionRequest(token, 'POST', '/pages', { parent: { database_id: databaseId }, properties });
+  try {
+    return await create();
+  } catch (err) {
+    // If Notion rejects Place, it rejects the whole row. Don't lose the event over it:
+    // create it with Place blank (for a human to fill) and warn in the log.
+    if (!properties.Place || !/place/i.test(err.message)) throw err;
+    console.warn(`Place rejected for "${event.name}", creating without it: ${err.message}`);
+    delete properties.Place;
+    return create();
+  }
 }
 
 /** Returns null when not backfilling, else { chapters: Set, since: Date }. */
@@ -302,10 +335,11 @@ async function main() {
     const chapter = props['Chapter/Hub'] ? props['Chapter/Hub'].select.name : '(blank)';
     const format = props.Format ? props.Format.select.name : '(blank)';
     const date = props['Event date'] ? props['Event date'].date.start : '(blank)';
+    const place = props.Place ? props.Place.place.name : '(blank)';
 
     if (dryRun) {
       console.log(
-        `Would create: ${event.name} | ${date} | ${chapter} | ${format} | ${normalizeEventUrl(event.url)}`
+        `Would create: ${event.name} | ${date} | ${chapter} | ${format} | Place: ${place} | ${normalizeEventUrl(event.url)}`
       );
       continue;
     }

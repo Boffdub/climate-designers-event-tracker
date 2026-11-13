@@ -29,17 +29,18 @@ function formatMonthDay(startAt, timezone) {
 
 function chapterGradient(chapter) {
   const map = {
-    'New York City': 'var(--new-york-chapter)',
-    Bengaluru: 'var(--bengaluru-chapter)',
-    Toronto: 'var(--toronto-chapter)',
-    Boston: 'var(--boston-chapter)',
     'Bay Area': 'var(--bay-area-chapter)',
-    'Los Angeles': 'var(--los-angeles-chapter)',
-    Japan: 'var(--japan-chapter)',
-    Milan: 'var(--milan-chapter)',
+    Bengaluru: 'var(--bengaluru-chapter)',
+    Boston: 'var(--boston-chapter)',
     Chicago: 'var(--chicago-chapter)',
     Dubai: 'var(--dubai-chapter)',
+    Japan: 'var(--japan-chapter)',
+    'Los Angeles': 'var(--los-angeles-chapter)',
+    Milan: 'var(--milan-chapter)',
+    'New York City': 'var(--new-york-chapter)',
+    Seattle: 'var(--seattle-chapter)',
     Singapore: 'var(--singapore-chapter)',
+    Toronto: 'var(--toronto-chapter)',
   };
   return map[chapter] || 'var(--new-york-chapter)';
 }

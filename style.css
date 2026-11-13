@@ -10,17 +10,18 @@
   --text: #0b0b0b;
   --muted: #6b6b6b;
   --border: #e4e4e4;
-  --new-york-chapter: linear-gradient(#D5E300 0%, #64BC10 100%);
-  --bengaluru-chapter: linear-gradient(#D766BB 0%, #F79B76 100%);
-  --toronto-chapter: linear-gradient(#FFA760 0%, #DC6EB1 100%);
-  --boston-chapter: linear-gradient(#00CEA6 0%, #00D47C 100%);
   --bay-area-chapter: linear-gradient(#00C1D6 0%, #7F86DB 100%);
-  --los-angeles-chapter: linear-gradient(#5C7CE0 0%, #D01CA4 100%);
-  --japan-chapter: linear-gradient(#2CD74A 0%, #006AA1 100%);
-  --milan-chapter: linear-gradient(#00BDFF 0%, #5E44F5 100%);
+  --bengaluru-chapter: linear-gradient(#D766BB 0%, #F79B76 100%);
+  --boston-chapter: linear-gradient(#00CEA6 0%, #00D47C 100%);
   --chicago-chapter: linear-gradient(#D21BFF 0%, #F68DFF 100%);
   --dubai-chapter: linear-gradient(#FF3C6B 0%, #FF9555 100%);
+  --japan-chapter: linear-gradient(#2CD74A 0%, #006AA1 100%);
+  --los-angeles-chapter: linear-gradient(#5C7CE0 0%, #D01CA4 100%);
+  --milan-chapter: linear-gradient(#00BDFF 0%, #5E44F5 100%);
+  --new-york-chapter: linear-gradient(#D5E300 0%, #64BC10 100%);
+  --seattle-chapter: linear-gradient(#00B6FF 0%, #00E3DB 100%);
   --singapore-chapter: linear-gradient(#FF7C00 0%, #FFB154 100%);
+  --toronto-chapter: linear-gradient(#FFA760 0%, #DC6EB1 100%);
 }
 
 * {

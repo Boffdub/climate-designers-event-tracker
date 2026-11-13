@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T20:37:31.925Z",
+  "generatedAt": "2026-11-12T23:20:29.525Z",
   "events": [
     {
       "chapter": "Singapore",
@@ -54,12 +54,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/oe/9b1d1504-fe74-4313-a1a3-c2e1c01edce9",
       "location": "The Pub at Golden Road- Atwater Village, 5410 W San Fernando Rd, Los Angeles, CA 90039, USA",
-      "url": "https://luma.com/climatenight",
-      "source": "luma",
       "geo": {
-        "lat": 34.0536909,
-        "lng": -118.242766
-      }
+        "lat": 34.150428,
+        "lng": -118.274458
+      },
+      "url": "https://luma.com/climatenight",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -118,12 +118,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/lt/99a636f5-d3a5-4a11-8cd3-251aedbe3587",
       "location": "Truly LA, 216 S Alameda St, Los Angeles, CA 90012, USA",
-      "url": "https://luma.com/climatenight2",
-      "source": "luma",
       "geo": {
-        "lat": 34.0466,
-        "lng": -118.2379766
-      }
+        "lat": 34.046255,
+        "lng": -118.237309
+      },
+      "url": "https://luma.com/climatenight2",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -158,12 +158,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/4c/d6a8f549-81fa-432e-b219-d83d4542f1b7",
       "location": "Barrel Head Brewhouse, 1785 Fulton St, San Francisco, CA 94117, USA",
-      "url": "https://luma.com/kpasvnup",
-      "source": "luma",
       "geo": {
-        "lat": 37.7757038,
-        "lng": -122.4460548
-      }
+        "lat": 37.775712,
+        "lng": -122.446054
+      },
+      "url": "https://luma.com/kpasvnup",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -174,12 +174,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/pt/d6431bd8-3916-4144-90df-c2557b8785f4",
       "location": "Indigo Slate, 316 2nd Ave S, Seattle, WA 98104, USA",
-      "url": "https://luma.com/76of6dld",
-      "source": "luma",
       "geo": {
-        "lat": 47.5994717,
-        "lng": -122.3313649
-      }
+        "lat": 47.599535,
+        "lng": -122.331393
+      },
+      "url": "https://luma.com/76of6dld",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -190,12 +190,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/fz/c705fb31-a7fb-4d9f-aee7-3ebcc25f630d",
       "location": "Barnsdall Art Park, 4800 Hollywood Blvd, Los Angeles, CA 90027, USA",
-      "url": "https://luma.com/climatedesigners-regift-exchange",
-      "source": "luma",
       "geo": {
-        "lat": 34.10169,
-        "lng": -118.294655
-      }
+        "lat": 34.100401,
+        "lng": -118.294392
+      },
+      "url": "https://luma.com/climatedesigners-regift-exchange",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -206,12 +206,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/jh/93f7691a-790d-448c-a215-c2d475afbb56",
       "location": "The Hermosillo, 5125 York Blvd, Los Angeles, CA 90042, USA",
-      "url": "https://luma.com/climatenight3",
-      "source": "luma",
       "geo": {
-        "lat": 34.1210378,
-        "lng": -118.2038147
-      }
+        "lat": 34.121059,
+        "lng": -118.203796
+      },
+      "url": "https://luma.com/climatenight3",
+      "source": "luma"
     },
     {
       "chapter": "Japan",
@@ -238,12 +238,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/xf/b714ff96-dcfd-4997-882a-6578f4486dae",
       "location": "Poster House, 119 W 23rd St, New York, NY 10011, USA",
-      "url": "https://luma.com/9tt8w586",
-      "source": "luma",
       "geo": {
-        "lat": 40.7435881,
-        "lng": -73.9933365
-      }
+        "lat": 40.743592,
+        "lng": -73.993328
+      },
+      "url": "https://luma.com/9tt8w586",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -254,12 +254,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/9g/17c676f7-24b9-4c29-a32f-f15be4491b50",
       "location": "Aeronaut Brewing Company, 14 Tyler St, Somerville, MA 02143, USA",
-      "url": "https://luma.com/4srhokic",
-      "source": "luma",
       "geo": {
-        "lat": 42.3819757,
-        "lng": -71.1062382
-      }
+        "lat": 42.381978,
+        "lng": -71.106255
+      },
+      "url": "https://luma.com/4srhokic",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -270,12 +270,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/aw/1ebbe7a3-bd50-46e0-a2f5-b631490d462b",
       "location": "Parklife, 636 Degraw St, Brooklyn, NY 11217, USA",
-      "url": "https://luma.com/0mbnnabt",
-      "source": "luma",
       "geo": {
-        "lat": 40.6788308,
-        "lng": -73.9831169
-      }
+        "lat": 40.678734,
+        "lng": -73.983233
+      },
+      "url": "https://luma.com/0mbnnabt",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -286,12 +286,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/8d/2ca32a83-1d65-45b2-9d7b-32c2ee8702b8",
       "location": "Indigo Slate, 316 2nd Ave S, Seattle, WA 98104, USA",
-      "url": "https://luma.com/jzlphjr8",
-      "source": "luma",
       "geo": {
-        "lat": 47.5994717,
-        "lng": -122.3313649
-      }
+        "lat": 47.599535,
+        "lng": -122.331393
+      },
+      "url": "https://luma.com/jzlphjr8",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -318,12 +318,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/oc/a8442e0a-b895-421d-8091-960ce4651891",
       "location": "The Trails, 2333 Fern Dell Dr, Los Angeles, CA 90068, USA",
-      "url": "https://luma.com/climatedesignersla-2024-Q1",
-      "source": "luma",
       "geo": {
-        "lat": 34.1128736,
-        "lng": -118.3075476
-      }
+        "lat": 34.113963,
+        "lng": -118.307687
+      },
+      "url": "https://luma.com/climatedesignersla-2024-Q1",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -334,12 +334,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/04/345a6000-7701-47da-8fe9-90fec49ea664",
       "location": "Fort Mason, San Francisco, CA 94109, USA",
-      "url": "https://luma.com/fzx3vslw",
-      "source": "luma",
       "geo": {
-        "lat": 37.8062813,
-        "lng": -122.4281207
-      }
+        "lat": 37.805099,
+        "lng": -122.425233
+      },
+      "url": "https://luma.com/fzx3vslw",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -350,12 +350,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/da/18a603ad-69e0-4a56-b831-9c41682191cd",
       "location": "4100 Bar, 1087 Manzanita St, Los Angeles, CA 90029, USA",
-      "url": "https://luma.com/climatecareerLA",
-      "source": "luma",
       "geo": {
-        "lat": 34.0929435,
-        "lng": -118.2814474
-      }
+        "lat": 34.093009,
+        "lng": -118.281509
+      },
+      "url": "https://luma.com/climatecareerLA",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -366,12 +366,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/ka/cca2e41c-da6c-4983-848f-b5c939ada9f7",
       "location": "Southern Pacific Brewing, 620 Treat Ave, San Francisco, CA 94110, USA",
-      "url": "https://luma.com/5gnqyjy8",
-      "source": "luma",
       "geo": {
-        "lat": 37.7601311,
-        "lng": -122.4139896
-      }
+        "lat": 37.760076,
+        "lng": -122.414224
+      },
+      "url": "https://luma.com/5gnqyjy8",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -382,12 +382,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/v4/4203e9f6-9435-4392-98a8-608949f633bd",
       "location": "415 Main St, Cambridge, MA 02142, USA",
-      "url": "https://luma.com/2c8r2yjg",
-      "source": "luma",
       "geo": {
-        "lat": 42.3631409,
-        "lng": -71.0887414
-      }
+        "lat": 42.362831,
+        "lng": -71.088823
+      },
+      "url": "https://luma.com/2c8r2yjg",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -398,12 +398,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.unsplash.com/photo-1617641428728-a8165a486813?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjQyMjF8MHwxfHNlYXJjaHw3fHx0cmFzaHxlbnwwfDJ8fHwxNzE1Nzk1ODY4fDI&ixlib=rb-4.0.3&q=80&w=1080",
       "location": "LASAN North Central District Yard, 452 N San Fernando Rd, Los Angeles, CA 90031, USA",
-      "url": "https://luma.com/Climatedesignersla-2024-Q2-LASAN",
-      "source": "luma",
       "geo": {
-        "lat": 34.0806393,
-        "lng": -118.2253012
-      }
+        "lat": 34.079285,
+        "lng": -118.223995
+      },
+      "url": "https://luma.com/Climatedesignersla-2024-Q2-LASAN",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -414,12 +414,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/68/58f6f874-5caf-4d7d-aeeb-2ef94715c44d",
       "location": "Volunteer Park Amphitheater, 1139-1157 Volunteer Park Rd, Seattle, WA 98102, USA",
-      "url": "https://luma.com/og2o9jut",
-      "source": "luma",
       "geo": {
-        "lat": 47.6038321,
-        "lng": -122.330062
-      }
+        "lat": 47.630361,
+        "lng": -122.317232
+      },
+      "url": "https://luma.com/og2o9jut",
+      "source": "luma"
     },
     {
       "chapter": "Toronto",
@@ -442,12 +442,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/eb/c80b3199-1121-4829-b686-645be54fb035",
       "location": "Doughboy Meadow, 1098 Park Presidio Bypass, San Francisco, CA 94121, USA",
-      "url": "https://luma.com/wg5ria6f",
-      "source": "luma",
       "geo": {
-        "lat": 37.7879363,
-        "lng": -122.4075201
-      }
+        "lat": 37.772113,
+        "lng": -122.474611
+      },
+      "url": "https://luma.com/wg5ria6f",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -458,12 +458,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/h8/44e38025-0ca5-4444-80f1-eca1a1ad4ebe",
       "location": "Governors Island, New York, NY 11231, USA",
-      "url": "https://luma.com/7w6up5co",
-      "source": "luma",
       "geo": {
-        "lat": 40.6923161,
-        "lng": -74.0020374
-      }
+        "lat": 40.68945,
+        "lng": -74.016792
+      },
+      "url": "https://luma.com/7w6up5co",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -474,12 +474,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/yc/e2231058-d9c9-4946-ae97-1a005bf6d117",
       "location": "Parkman Plaza, Tremont St &, West St, Boston, MA 02108, USA",
-      "url": "https://luma.com/l1qe3x85",
-      "source": "luma",
       "geo": {
-        "lat": 42.3422009,
-        "lng": -71.075363
-      }
+        "lat": 42.355334,
+        "lng": -71.063598
+      },
+      "url": "https://luma.com/l1qe3x85",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -490,12 +490,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/k0/714c7724-b45f-455f-9b19-296acfea5099",
       "location": "Cambridge Common, Waterhouse St & Massachusetts Ave, Cambridge, MA 02138, USA",
-      "url": "https://luma.com/21uo8wc6",
-      "source": "luma",
       "geo": {
-        "lat": 42.3777847,
-        "lng": -71.1205212
-      }
+        "lat": 42.37671,
+        "lng": -71.120901
+      },
+      "url": "https://luma.com/21uo8wc6",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -518,12 +518,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/cf/200e48e8-013c-48de-ae19-362445ac9239",
       "location": "Spark Social SF, 601 Mission Bay Boulevard North, San Francisco, CA 94158, USA",
-      "url": "https://luma.com/j0ekd58z",
-      "source": "luma",
       "geo": {
-        "lat": 37.7707171,
-        "lng": -122.3915905
-      }
+        "lat": 37.770779,
+        "lng": -122.391431
+      },
+      "url": "https://luma.com/j0ekd58z",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -534,12 +534,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/qq/c471b92e-de88-4784-b0c6-3fe69d21291a",
       "location": "Jane's Carousel, 1 Old, Dock St, Brooklyn, NY 11201, USA",
-      "url": "https://luma.com/na04pru0",
-      "source": "luma",
       "geo": {
-        "lat": 40.702653,
-        "lng": -73.9925726
-      }
+        "lat": 40.70445,
+        "lng": -73.992388
+      },
+      "url": "https://luma.com/na04pru0",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -550,12 +550,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/a9/442f8dec-49fb-4899-9852-aa42389998ed",
       "location": "1215 4th Ave 15th floor, Seattle, WA 98101, USA",
-      "url": "https://luma.com/i5jscc69",
-      "source": "luma",
       "geo": {
-        "lat": 47.6038321,
-        "lng": -122.330062
-      }
+        "lat": 47.6078,
+        "lng": -122.334718
+      },
+      "url": "https://luma.com/i5jscc69",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -566,12 +566,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/8u/c2b0e438-47ad-412a-89e1-0f3f5b754a73",
       "location": "50 Thomson Pl, Boston, MA 02210, USA",
-      "url": "https://luma.com/zqhms7rh",
-      "source": "luma",
       "geo": {
-        "lat": 42.3521489,
-        "lng": -71.0474876
-      }
+        "lat": 42.3522,
+        "lng": -71.047422
+      },
+      "url": "https://luma.com/zqhms7rh",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -582,12 +582,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/yi/1f7cce85-40b1-48e8-a8cc-f83fa776fb17",
       "location": "Lamplighter Brewing Co. - Broadway, 284 Broadway, Cambridge, MA 02139, USA",
-      "url": "https://luma.com/v14qqmc0",
-      "source": "luma",
       "geo": {
-        "lat": 42.3677738,
-        "lng": -71.0979796
-      }
+        "lat": 42.36799,
+        "lng": -71.097901
+      },
+      "url": "https://luma.com/v14qqmc0",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -598,12 +598,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/fc/74ee1883-e5d5-42bd-acd7-e0ac43812a45",
       "location": "Mercurius Beer Lab, 726 15th St, San Francisco, CA 94103, USA",
-      "url": "https://luma.com/j4c8zto7",
-      "source": "luma",
       "geo": {
-        "lat": 37.7672132,
-        "lng": -122.4082649
-      }
+        "lat": 37.767199,
+        "lng": -122.408288
+      },
+      "url": "https://luma.com/j4c8zto7",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -614,12 +614,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/tv/714c586b-0c09-45f4-a067-47179dff03b3",
       "location": "Elysian Capitol Hill Brewery, 1221 E Pike St, Seattle, WA 98122, USA",
-      "url": "https://luma.com/fi6fwlv3",
-      "source": "luma",
       "geo": {
-        "lat": 47.6139598,
-        "lng": -122.3157647
-      }
+        "lat": 47.613963,
+        "lng": -122.315851
+      },
+      "url": "https://luma.com/fi6fwlv3",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -630,12 +630,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/yn/1f29e801-303b-4d21-9136-fe80be1423b0",
       "location": "Museum of Science, 1 Science Pk, Boston, MA 02114, USA",
-      "url": "https://luma.com/lzz9k4i2",
-      "source": "luma",
       "geo": {
-        "lat": 42.3674305,
-        "lng": -71.071098
-      }
+        "lat": 42.367714,
+        "lng": -71.070977
+      },
+      "url": "https://luma.com/lzz9k4i2",
+      "source": "luma"
     },
     {
       "chapter": "Japan",
@@ -662,12 +662,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/ms/39dc6b3c-4303-444a-9f99-f9c0358740d8.png",
       "location": "Democracy Brewing, 35 Temple Pl, Boston, MA 02111, USA",
-      "url": "https://luma.com/9oib2ape",
-      "source": "luma",
       "geo": {
-        "lat": 42.3551144,
-        "lng": -71.0620624
-      }
+        "lat": 42.355112,
+        "lng": -71.062167
+      },
+      "url": "https://luma.com/9oib2ape",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -678,12 +678,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/h0/f1f6b112-75de-4e3d-b2f8-075e01db1d6f.png",
       "location": "Parklife, 636 Degraw St, Brooklyn, NY 11217, USA",
-      "url": "https://luma.com/y9kf4flc",
-      "source": "luma",
       "geo": {
-        "lat": 40.6788308,
-        "lng": -73.9831169
-      }
+        "lat": 40.678734,
+        "lng": -73.983233
+      },
+      "url": "https://luma.com/y9kf4flc",
+      "source": "luma"
     },
     {
       "chapter": "Milan",
@@ -710,12 +710,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/bn/b7f5fefa-4cab-4906-9863-8f22e27fc148.jpg",
       "location": "Brand Library & Art Center, 1601 W Mountain St, Glendale, CA 91201, USA",
-      "url": "https://luma.com/9e249f3e",
-      "source": "luma",
       "geo": {
-        "lat": 34.182052,
-        "lng": -118.2765332
-      }
+        "lat": 34.182517,
+        "lng": -118.276376
+      },
+      "url": "https://luma.com/9e249f3e",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -815,8 +815,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/qp/46cd92e0-1cae-44e1-a957-52c04766b907.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/6sbnnh6c",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -828,8 +827,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/ai/7ce01b43-7f75-49e9-9c98-9a0567804a57.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/sjo8l99w",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -840,12 +838,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/4q/a8dba7ae-be65-448d-afce-c5a93e534bf9.png",
       "location": "St. Paul's Commons Retreat Center, 840 Echo Park Ave, Los Angeles, CA 90026, USA",
-      "url": "https://luma.com/ytxy6m3u",
-      "source": "luma",
       "geo": {
-        "lat": 34.0733573,
-        "lng": -118.2591138
-      }
+        "lat": 34.07353,
+        "lng": -118.259216
+      },
+      "url": "https://luma.com/ytxy6m3u",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -857,8 +855,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/e2/c5a3f20b-0502-4f97-bd25-2ed7067d1bf9.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/7o6v00hv",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -870,8 +867,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/kn/e4970751-6945-4397-b8ab-3496fe354080.png",
       "location": "Edendale Community Garden - 861 Laguna Ave., Los Angeles 90026",
       "url": "https://luma.com/hrfbukj7",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -883,8 +879,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/54/a1f49c97-74e9-4085-b5e0-5eb6bd84f477.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/qun1ffhn",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -896,8 +891,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/rk/2f0b5896-2981-4a88-94d8-c47c18721e3a.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/4mo0qj9t",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -909,8 +903,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/84/ce013b39-2aad-4476-b035-c1aaf6b38922.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/l7e96hk6",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -922,8 +915,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/ai/378c426c-e747-47b4-8735-9916a0d8f2a8.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/bwwdpudz",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -935,8 +927,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/uf/75492515-2eaa-4a64-8892-c1ccf7b41ae4.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/f2q9xvb0",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -947,9 +938,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/bs/1ac78eb7-fb31-4c78-8b9a-7ee1c464dc35.png",
       "location": "Edendale Community Garden - 861 Laguna Ave., Los Angeles 90026",
+      "geo": {
+        "lat": 34.073737,
+        "lng": -118.2586
+      },
       "url": "https://luma.com/hjpgq6ph",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -961,8 +955,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/cv/1a66c9a6-3f9b-4b50-86d1-a9a2530ff42a.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/q9lhe8x5",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -974,8 +967,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/nf/c56ca59c-512c-4753-9d6a-977b9f9782d9.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/lg2hlzav",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -986,12 +978,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/1p/d82b2835-822e-41c1-9648-54d0175656d2.png",
       "location": "Seeds of Hope, Edendale Grove MicroFarm, 860 Echo Park Ave, Los Angeles, CA 90026, USA",
-      "url": "https://luma.com/s1j8xtd0",
-      "source": "luma",
       "geo": {
-        "lat": 34.0732747,
-        "lng": -118.2594083
-      }
+        "lat": 34.073644,
+        "lng": -118.25877
+      },
+      "url": "https://luma.com/s1j8xtd0",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1003,8 +995,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/ls/7cdcf39f-bce2-4c4b-bd10-a14f85b0e82c.png",
       "location": "St Paul’s Commons - 840 Echo Park Ave. Los Angeles, CA 90026",
       "url": "https://luma.com/j0gq23eq",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1016,8 +1007,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/a2/9de15505-df55-4ea6-9164-8819dc976026.png",
       "location": "Edendale Community Garden - 861 Laguna Ave., Los Angeles 90026",
       "url": "https://luma.com/i02d2g5u",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1028,12 +1018,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/38/dc15f36b-f9ae-40da-a0ca-6c3702c94ef4.png",
       "location": "843 Laguna Ave, Los Angeles, CA 90026, USA",
-      "url": "https://luma.com/v6cvuz97",
-      "source": "luma",
       "geo": {
-        "lat": 34.0733318,
-        "lng": -118.258934
-      }
+        "lat": 34.07325,
+        "lng": -118.25912
+      },
+      "url": "https://luma.com/v6cvuz97",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -1044,12 +1034,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/yb/a6984be3-7438-4c0c-ad34-636905dc078a.png",
       "location": "Bentley University, 175 Forest St, Waltham, MA 02452, USA",
-      "url": "https://luma.com/6ealyxsn",
-      "source": "luma",
       "geo": {
-        "lat": 42.3834189,
-        "lng": -71.2225864
-      }
+        "lat": 42.385532,
+        "lng": -71.22179
+      },
+      "url": "https://luma.com/6ealyxsn",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -1060,12 +1050,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/v4/511e6df7-5f97-4291-9b35-35033bc52c8e.jpg",
       "location": "Gott's Roadside, One Ferry Building, The Embarcadero S, San Francisco, CA 94111, USA",
-      "url": "https://luma.com/21i886jj",
-      "source": "luma",
       "geo": {
-        "lat": 37.7965208,
-        "lng": -122.395117
-      }
+        "lat": 37.796049,
+        "lng": -122.394166
+      },
+      "url": "https://luma.com/21i886jj",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1116,12 +1106,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/vh/7549a3e2-5000-4df0-ad3e-31a58567f50d.jpg",
       "location": "472 2nd Ave, Brooklyn, NY 11232, USA",
-      "url": "https://luma.com/yiq1hgy3",
-      "source": "luma",
       "geo": {
-        "lat": 40.6623901,
-        "lng": -74.0097671
-      }
+        "lat": 40.661688,
+        "lng": -74.009081
+      },
+      "url": "https://luma.com/yiq1hgy3",
+      "source": "luma"
     },
     {
       "chapter": "Milan",
@@ -1148,12 +1138,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/ss/f5920c01-eee1-4ac5-a82d-7b2066fb19a3.jpg",
       "location": "Mechanics Monument Plaza, Mechanics Monument, San Francisco, CA 94111, USA",
-      "url": "https://luma.com/4zdgg237",
-      "source": "luma",
       "geo": {
-        "lat": 37.7912841,
-        "lng": -122.3992125
-      }
+        "lat": 37.791456,
+        "lng": -122.399136
+      },
+      "url": "https://luma.com/4zdgg237",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -1164,12 +1154,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/1a/73615259-cd3f-41cc-a38d-bee82d59b58e.gif",
       "location": "Volunteer Park Amphitheater, 1139-1157 Volunteer Park Rd, Seattle, WA 98102, USA",
-      "url": "https://luma.com/sywr3t66",
-      "source": "luma",
       "geo": {
-        "lat": 47.6038321,
-        "lng": -122.330062
-      }
+        "lat": 47.630374,
+        "lng": -122.31724
+      },
+      "url": "https://luma.com/sywr3t66",
+      "source": "luma"
     },
     {
       "chapter": "Seattle",
@@ -1180,12 +1170,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/52/b37c1a18-9f3c-48e3-ba40-a2b05ae1662d.png",
       "location": "Chuck's Hop Shop Central District, 2001 E Union St, Seattle, WA 98122, USA",
-      "url": "https://luma.com/a66wrdk6",
-      "source": "luma",
       "geo": {
-        "lat": 47.6127008,
-        "lng": -122.3057622
-      }
+        "lat": 47.61271,
+        "lng": -122.305766
+      },
+      "url": "https://luma.com/a66wrdk6",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -1228,12 +1218,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/rn/10727298-3968-4ae8-b63a-38383c8f8078.jpg",
       "location": "Yes SF Headquarters, 220 Montgomery St, San Francisco, CA 94104, USA",
-      "url": "https://luma.com/szvne64g",
-      "source": "luma",
       "geo": {
-        "lat": 37.7912938,
-        "lng": -122.4021563
-      }
+        "lat": 37.791302800000004,
+        "lng": -122.40235639999999
+      },
+      "url": "https://luma.com/szvne64g",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1244,12 +1234,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/18/0f3e8b67-bef4-4233-8643-426f9f1e3586.png",
       "location": "Forager Crafts, 2915 Knox Ave #103, Los Angeles, CA 90039, USA",
-      "url": "https://luma.com/g7m2mkan",
-      "source": "luma",
       "geo": {
-        "lat": 34.0536909,
-        "lng": -118.242766
-      }
+        "lat": 34.1033298,
+        "lng": -118.2434798
+      },
+      "url": "https://luma.com/g7m2mkan",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -1289,8 +1279,7 @@
       "coverUrl": "https://images.humanitix.com/i/Ro1mrAGJRqi51uYpeNX2@seo-500.jpg",
       "location": "Design Social Club -  Politecnico di Milano, Design Social Club -  Politecnico di Milano, Campus Bovisa - Via Durando 10, Building B9a",
       "url": "https://events.humanitix.com/the-climate-of-inequality",
-      "source": "humanitix",
-      "geo": null
+      "source": "humanitix"
     },
     {
       "chapter": "Japan",
@@ -1329,12 +1318,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/jv/78eb7a11-5a69-46a0-a8b2-1c4b705088ce.jpg",
       "location": "726 15th St, San Francisco, CA 94103, USA",
-      "url": "https://luma.com/9xgxar79",
-      "source": "luma",
       "geo": {
-        "lat": 37.7672132,
-        "lng": -122.4082649
-      }
+        "lat": 37.7671746,
+        "lng": -122.40828949999998
+      },
+      "url": "https://luma.com/9xgxar79",
+      "source": "luma"
     },
     {
       "chapter": "Japan",
@@ -1357,12 +1346,12 @@
       "timezone": "America/Chicago",
       "coverUrl": "https://images.lumacdn.com/event-covers/l8/1c6b347b-275c-4ceb-b35f-9cd0d3f030bc.png",
       "location": "Lincoln Park Conservatory (Free with Reservations), 2391 N Stockton Dr, Chicago, IL 60614, USA",
-      "url": "https://luma.com/c2am2dwn",
-      "source": "luma",
       "geo": {
-        "lat": 41.9244127,
-        "lng": -87.6348029
-      }
+        "lat": 41.9238673,
+        "lng": -87.6352526
+      },
+      "url": "https://luma.com/c2am2dwn",
+      "source": "luma"
     },
     {
       "chapter": "Japan",
@@ -1402,8 +1391,7 @@
       "coverUrl": "https://images.lumacdn.com/event-covers/zf/c810a58e-5810-4dcd-9d78-2223010ab204.jpg",
       "location": "https://kinema.com/events/The-Cost-of-Growth-or-A-Climate-Designers-Toronto-Discussion-lc9q-o",
       "url": "https://luma.com/yjyfmxrx",
-      "source": "luma",
-      "geo": null
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1414,12 +1402,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/n1/6cbecf35-851e-4643-ad71-ea2de6cf2dc9.jpg",
       "location": "Spoke, 3050 N Coolidge Ave, Los Angeles, CA 90039, USA",
-      "url": "https://luma.com/ruzow59g",
-      "source": "luma",
       "geo": {
-        "lat": 34.105087,
-        "lng": -118.2435948
-      }
+        "lat": 34.1050536,
+        "lng": -118.24359869999999
+      },
+      "url": "https://luma.com/ruzow59g",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1430,12 +1418,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/event-covers/1f/eb672069-e4ad-4e4c-b3d5-53996f1246bd.jpg",
       "location": "Parklife, 636 Degraw St, Brooklyn, NY 11217, USA",
-      "url": "https://luma.com/e6ivw1a4",
-      "source": "luma",
       "geo": {
-        "lat": 40.6788308,
-        "lng": -73.9831169
-      }
+        "lat": 40.678734299999995,
+        "lng": -73.9832325
+      },
+      "url": "https://luma.com/e6ivw1a4",
+      "source": "luma"
     },
     {
       "chapter": "Milan",
@@ -1462,12 +1450,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/cr/ead2dbe8-9b00-4456-8d4a-9368616fa69e.png",
       "location": "Project Ropa, 13970 Van Ness Ave, Gardena, CA 90249, USA",
-      "url": "https://luma.com/x1s4evk9",
-      "source": "luma",
       "geo": {
-        "lat": 33.9048659,
-        "lng": -118.317701
-      }
+        "lat": 33.9050365,
+        "lng": -118.3173525
+      },
+      "url": "https://luma.com/x1s4evk9",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -1478,12 +1466,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/8q/c63038ed-69c4-42f8-926c-864fc287e2e2.jpg",
       "location": "Gott's Ferry Building, Marketplace 1, Ferry Building, Ferry Plz Building #6, San Francisco, CA 94111, USA",
-      "url": "https://luma.com/3sutkyuv",
-      "source": "luma",
       "geo": {
-        "lat": 37.7879363,
-        "lng": -122.4075201
-      }
+        "lat": 37.7960614,
+        "lng": -122.3942302
+      },
+      "url": "https://luma.com/3sutkyuv",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1494,12 +1482,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/ao/809568cc-0798-4149-b7e6-476c56364fe2.png",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/ogbsm84h",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/ogbsm84h",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1510,12 +1498,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/vc/481cea2d-9c25-4fd3-a860-e9a751b71653.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/ylregzck",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/ylregzck",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1526,12 +1514,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/jz/54cb0c8f-d64f-42bb-97a4-c9ca253f5428.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/x8k25xcu",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/x8k25xcu",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1542,12 +1530,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/yt/6d7202fa-e734-4f9a-bdf6-66c66f685bd2.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/o2x56a4o",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/o2x56a4o",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1558,12 +1546,13 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/9p/4f13a124-7e00-45b8-8202-b4d44cfd29fd.jpg",
       "location": "West LA College, Los Angeles, CA, USA ",
-      "url": "https://luma.com/kymjnmsh",
-      "source": "luma",
       "geo": {
         "lat": 34.0042478,
         "lng": -118.387021
-      }
+      },
+      "url": "https://luma.com/kymjnmsh",
+      "source": "luma",
+      "geoApproximate": true
     },
     {
       "chapter": "Los Angeles",
@@ -1574,12 +1563,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/b2/403c8aac-73e9-409d-b995-7024f3be05fe.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/3zocdd2x",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/3zocdd2x",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1590,12 +1579,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/cw/2bfb23be-e1b5-437f-99ed-5929a91c8843.png",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/9drdjrse",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/9drdjrse",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1606,12 +1595,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/y9/c4c51c24-0d12-4fe1-aab3-ec3e61b46a36.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/5rvuqiwj",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/5rvuqiwj",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1622,12 +1611,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/fs/d8d67106-0ddb-4196-bbd4-85047caae0e8.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/3f2y7aqs",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/3f2y7aqs",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1638,12 +1627,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/hw/0e48616e-4229-42ab-8d39-68f5d8e85ed0.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/yq6l1pa1",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/yq6l1pa1",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1654,12 +1643,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/r3/365881db-3924-4e44-84b2-952b2a2d54e0.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/axc0mhdu",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/axc0mhdu",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1670,12 +1659,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/1s/b451641b-80a2-4103-934c-4cb383e48249.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/io2hkuia",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/io2hkuia",
+      "source": "luma"
     },
     {
       "chapter": "Los Angeles",
@@ -1686,12 +1675,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/10/dac85b81-42e0-4677-b47a-d927c52b7491.jpg",
       "location": "West Los Angeles College, 9000 Overland Ave, Culver City, CA 90230, USA",
-      "url": "https://luma.com/jm9ucws0",
-      "source": "luma",
       "geo": {
-        "lat": 34.0045672,
-        "lng": -118.3870271
-      }
+        "lat": 34.0040139,
+        "lng": -118.38685559999999
+      },
+      "url": "https://luma.com/jm9ucws0",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -1702,12 +1691,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/event-covers/kh/e03f8722-67e0-4175-a012-19bac6cd9467.jpg",
       "location": "220 Montgomery St, San Francisco, CA 94104, USA",
-      "url": "https://luma.com/0q1lvg29",
-      "source": "luma",
       "geo": {
-        "lat": 37.7912938,
-        "lng": -122.4021563
-      }
+        "lat": 37.791303,
+        "lng": -122.402356
+      },
+      "url": "https://luma.com/0q1lvg29",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -1718,12 +1707,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/l6/ae8af074-d14f-4a4d-9aa3-d6bf45972712.png",
       "location": "The Foundry, 101 Rogers St, Cambridge, MA 02142, USA",
-      "url": "https://luma.com/tigi37go",
-      "source": "luma",
       "geo": {
-        "lat": 42.3666151,
-        "lng": -71.0827636
-      }
+        "lat": 42.3666874,
+        "lng": -71.0827391
+      },
+      "url": "https://luma.com/tigi37go",
+      "source": "luma"
     },
     {
       "chapter": "Toronto",
@@ -1734,12 +1723,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/event-covers/fn/20124278-ed97-49d4-b4d8-bb21ae796b6c.jpg",
       "location": "100 McCaul St, Toronto, ON M5T 2W7, Canada",
-      "url": "https://luma.com/4kf4mkh5",
-      "source": "luma",
       "geo": {
-        "lat": 43.6532853,
-        "lng": -79.3915144
-      }
+        "lat": 43.653184499999995,
+        "lng": -79.3914842
+      },
+      "url": "https://luma.com/4kf4mkh5",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1750,12 +1739,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/30/c07ddcba-fb5c-4152-a477-135a2903b1ac.jpg",
       "location": "Barcade, 388 Union Ave, Brooklyn, NY 11211, USA",
-      "url": "https://luma.com/mf3sw55u",
-      "source": "luma",
       "geo": {
-        "lat": 40.7120257,
-        "lng": -73.951117
-      }
+        "lat": 40.712072,
+        "lng": -73.95106299999999
+      },
+      "url": "https://luma.com/mf3sw55u",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1766,12 +1755,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/51/91c1ef9a-ca00-4baa-b331-f9b26d0a58bb.jpg",
       "location": "The Climate Museum, 105 Wooster St, New York, NY 10012, USA",
-      "url": "https://luma.com/twzkljp7",
-      "source": "luma",
       "geo": {
-        "lat": 40.7248411,
-        "lng": -74.0006739
-      }
+        "lat": 40.7246872,
+        "lng": -74.00082309999999
+      },
+      "url": "https://luma.com/twzkljp7",
+      "source": "luma"
     },
     {
       "chapter": "Bay Area",
@@ -1782,12 +1771,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/uploads/tw/a5b12c26-7f8d-496c-81ba-1a81199a6fff.webp",
       "location": "Gateway Pavilion - Pier 2, 2 Marina Blvd, San Francisco, CA 94123, USA",
-      "url": "https://luma.com/6iu0ou29",
-      "source": "luma",
       "geo": {
-        "lat": 37.806886,
-        "lng": -122.4322073
-      }
+        "lat": 37.807916399999996,
+        "lng": -122.4312726
+      },
+      "url": "https://luma.com/6iu0ou29",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -1798,12 +1787,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/bb/a0ae3ddb-f631-40f1-9d36-c63d0f468d36.png",
       "location": "Night Shift Esplanade, BOST-0502496000, Boston, MA 02116, USA",
-      "url": "https://luma.com/2j9gpxhg",
-      "source": "luma",
       "geo": {
-        "lat": 42.3588336,
-        "lng": -71.0578303
-      }
+        "lat": 42.3558109,
+        "lng": -71.0771043
+      },
+      "url": "https://luma.com/2j9gpxhg",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1814,12 +1803,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/1t/499af1fd-b34c-440d-9b9f-d6da81775d0d.jpg",
       "location": "Barcade, 148 W 24th St, New York, NY 10011, USA",
-      "url": "https://luma.com/oi21o4f9",
-      "source": "luma",
       "geo": {
-        "lat": 40.7443263,
-        "lng": -73.9944542
-      }
+        "lat": 40.7442657,
+        "lng": -73.9945268
+      },
+      "url": "https://luma.com/oi21o4f9",
+      "source": "luma"
     },
     {
       "chapter": "New York City",
@@ -1830,12 +1819,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/5j/4622d2f8-bd44-4a26-8515-528d944893b3.jpg",
       "location": "472 2nd Ave, Brooklyn, NY 11232, USA",
-      "url": "https://luma.com/ytlrdkl2",
-      "source": "luma",
       "geo": {
-        "lat": 40.6623901,
-        "lng": -74.0097671
-      }
+        "lat": 40.6620853,
+        "lng": -74.00928309999999
+      },
+      "url": "https://luma.com/ytlrdkl2",
+      "source": "luma"
     },
     {
       "chapter": "Bengaluru",
@@ -1858,12 +1847,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/uploads/un/5cca1464-d867-4bd9-a3bb-2d882103691d.png",
       "location": "Los Angeles State Historic Park, 1245 N Spring St, Los Angeles, CA 90012, USA",
-      "url": "https://luma.com/8h8pf5l2",
-      "source": "luma",
       "geo": {
-        "lat": 34.0652018,
-        "lng": -118.2349652
-      }
+        "lat": 34.0682286,
+        "lng": -118.2318135
+      },
+      "url": "https://luma.com/8h8pf5l2",
+      "source": "luma"
     },
     {
       "chapter": "Toronto",
@@ -1874,12 +1863,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/2l/edef1964-4c1c-4027-b42b-da5a51ed5dbc.png",
       "location": "1208 Yonge St, Toronto, ON M4T 1W1, Canada",
-      "url": "https://luma.com/8h40h4rw",
-      "source": "luma",
       "geo": {
-        "lat": 43.6816978,
-        "lng": -79.3916485
-      }
+        "lat": 43.681751299999995,
+        "lng": -79.39159389999999
+      },
+      "url": "https://luma.com/8h40h4rw",
+      "source": "luma"
     },
     {
       "chapter": "Toronto",
@@ -1890,12 +1879,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/pr/da36f9b1-ee00-45aa-b8b3-a745fafbba99.jpg",
       "location": "425 Carlton St., Toronto, ON M5A 2M3, Canada",
-      "url": "https://luma.com/je135yz1",
-      "source": "luma",
       "geo": {
-        "lat": 43.6658622,
-        "lng": -79.3609224
-      }
+        "lat": 43.6658506,
+        "lng": -79.360929
+      },
+      "url": "https://luma.com/je135yz1",
+      "source": "luma"
     },
     {
       "chapter": "Japan",
@@ -1918,12 +1907,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/db/27d69997-b428-4bd9-ac67-fedb0fb5269d.jpg",
       "location": "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada",
-      "url": "https://luma.com/alpdgbe0",
-      "source": "luma",
       "geo": {
-        "lat": 43.682232,
-        "lng": -79.3918454
-      }
+        "lat": 43.6821565,
+        "lng": -79.39188340000001
+      },
+      "url": "https://luma.com/alpdgbe0",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -1966,12 +1955,12 @@
       "timezone": "America/Los_Angeles",
       "coverUrl": "https://images.lumacdn.com/uploads/hx/c7e4aeb8-d0f4-4f7a-8413-c598e51d6707.jpg",
       "location": "The Rug Shop, 5028 N Eagle Rock Blvd, Los Angeles, CA 90041, USA",
-      "url": "https://luma.com/ladw26-kantara-rugs-climate-designers-la",
-      "source": "luma",
       "geo": {
-        "lat": 34.1378663,
-        "lng": -118.2142613
-      }
+        "lat": 34.137786399999996,
+        "lng": -118.21421679999999
+      },
+      "url": "https://luma.com/ladw26-kantara-rugs-climate-designers-la",
+      "source": "luma"
     },
     {
       "chapter": "Boston",
@@ -1982,12 +1971,12 @@
       "timezone": "America/New_York",
       "coverUrl": "https://images.lumacdn.com/uploads/d8/633da83a-bd19-48ed-9f42-83c9300e8f31.png",
       "location": "The Foundry, 101 Rogers St, Cambridge, MA 02142, USA",
-      "url": "https://luma.com/46tji869",
-      "source": "luma",
       "geo": {
-        "lat": 42.3666151,
-        "lng": -71.0827636
-      }
+        "lat": 42.3666874,
+        "lng": -71.0827391
+      },
+      "url": "https://luma.com/46tji869",
+      "source": "luma"
     },
     {
       "chapter": "Dubai",
@@ -2010,12 +1999,12 @@
       "timezone": "America/Chicago",
       "coverUrl": "https://images.lumacdn.com/uploads/uv/4c48e7eb-3e45-4bf0-b384-ca08e302bd4e.png",
       "location": "300 S Riverside Plaza floor 1, Chicago, IL 60606, USA",
-      "url": "https://luma.com/etti0gvf",
-      "source": "luma",
       "geo": {
-        "lat": 41.8755616,
-        "lng": -87.6244212
-      }
+        "lat": 41.8773917,
+        "lng": -87.63837199999999
+      },
+      "url": "https://luma.com/etti0gvf",
+      "source": "luma"
     },
     {
       "chapter": "Toronto",
@@ -2026,12 +2015,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/ub/7bad12e9-e0fc-4f86-9a6c-163976898502.jpg",
       "location": "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada",
-      "url": "https://luma.com/y28lnt82",
-      "source": "luma",
       "geo": {
-        "lat": 43.682232,
-        "lng": -79.3918454
-      }
+        "lat": 43.6821565,
+        "lng": -79.39188340000001
+      },
+      "url": "https://luma.com/y28lnt82",
+      "source": "luma"
     },
     {
       "chapter": "Singapore",
@@ -2058,12 +2047,12 @@
       "timezone": "America/Toronto",
       "coverUrl": "https://images.lumacdn.com/uploads/bl/64afed6a-fca9-4a59-becc-54a81de7798b.jpg",
       "location": "Impact Kitchen, 1222 Yonge St, Toronto, ON M4T 1W3, Canada",
-      "url": "https://luma.com/j11f436b",
-      "source": "luma",
       "geo": {
-        "lat": 43.682232,
-        "lng": -79.3918454
-      }
+        "lat": 43.6821565,
+        "lng": -79.39188340000001
+      },
+      "url": "https://luma.com/j11f436b",
+      "source": "luma"
     }
   ],
   "flaggedChapters": [
