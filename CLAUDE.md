@@ -42,13 +42,14 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 
 ## Chapter colors (public site)
 
-- Each chapter's card gradient is a `--<chapter>-chapter` variable in `style.css`, mapped by chapter name in `chapterGradient()` in `app.js`. A chapter missing from the map falls back to the NYC gradient. Seattle has no color yet (it and Philippines may close soon).
+- Each chapter's card gradient is a `--<chapter>-chapter` variable in `style.css`, mapped by chapter name in `chapterGradient()` in `app.js`. A chapter missing from the map falls back to the NYC gradient. Every scraped chapter has one; Philippines doesn't yet (it and Seattle may close soon).
 - The hex values come from the chapters' official brand gradients (Brett copies them from Figma). Don't suggest changing them, even when two look alike (e.g. Dubai and Bengaluru).
 - The site's gradients run top to bottom (no angle), unlike the diagonal ones in the official artwork. That's intentional; leave them as is.
 
 ## Notion
 
-- `sync-notion.js` is **create-only** (dedupes by `Event URL`, never edits or deletes). It expects these properties on the target database: `Event name` (title), `Event URL`, `Event date`, `Quarter` (select), `Chapter/Hub` (select), `Format` (select), `Location`. Category and Place are left blank for humans.
+- `sync-notion.js` is **create-only** (dedupes by `Event URL`, never edits or deletes). It expects these properties on the target database: `Event name` (title), `Event URL`, `Event date`, `Quarter` (select), `Chapter/Hub` (select), `Format` (select), `Location`, `Place` (Place type). Category is left blank for humans.
+- **Place (for the Map view; Map reads only Place-type columns, never text):** filled only from the platform's own venue pin (`event.geo` without `geoApproximate`). Luma's comes from the API's `coordinate` field. Nominatim geocoding is only a fallback and is marked `geoApproximate`, because a failed lookup silently falls back to a city-center pin (e.g. different LA venues had landed on the same downtown spot). Brett's rule: **a blank Place beats a plausible wrong one**, since the team can't tell a wrong pin is wrong. If Notion rejects the Place value, `createNotionEvent` retries without it and logs a warning, so the row isn't lost.
 - `Chapter/Hub` values come from `CHAPTER_TO_NOTION` in `sync-notion.js` (e.g. `Boston` → `Boston Chapter`). They must exactly match the target database's select options, or Notion silently creates a new, near-duplicate option. Chapters missing from the map (e.g. Seattle, Dubai) get a blank Chapter/Hub.
 - **Production target (since 2026-11-02):** "Event Tracking (automated)" in the **Climate Designers** workspace, `408498810e4180ad90bfcdfb254ac159`, set via the `NOTION_DATABASE_ID` secret. The script's fallback when that's unset is still Brett's personal **Event Tracker Test** (`3a30471deb0980bf975df71e7ede0c23`), which is now a sandbox.
 - **Always dry-run (`DRY_RUN=1`) and show Brett the output before any live Notion write**, especially against the Climate Designers workspace, which other people use. For a first live write after a change, use `LIMIT=1`.
@@ -58,7 +59,7 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 
 ## In progress / to do
 
-**Script cleanup (proposed, not approved yet):** make `NOTION_DATABASE_ID` required in `sync-notion.js` (`requireEnv`) and drop the `DEFAULT_DATABASE_ID` fallback, so a local run can never silently target a database nobody chose. Bundle it with the Place change below, and update the README's database table when it lands.
+**Script cleanup (proposed, not approved yet):** make `NOTION_DATABASE_ID` required in `sync-notion.js` (`requireEnv`) and drop the `DEFAULT_DATABASE_ID` fallback, so a local run can never silently target a database nobody chose. Update the README's database table when it lands.
 
 **Before the next backfill: add a duplicate warning.** Dedupe is by `Event URL` only. The 2026-11-11 Japan/Milan backfill created 2 duplicates of rows someone had hand-entered with a different URL (Feb 18 Tech Inspiration Espresso; Mar 5 Da Eco-Ansia), which Brett removed by hand (the integration can't delete). Idea: in backfill mode, flag (not skip) events whose chapter + date already exist in Notion, so the dry run shows them.
 
@@ -66,7 +67,7 @@ Each Luma chapter in `data/chapters.json` has `approvedHosts`. An event is kept 
 
 **If Internal and automated are ever merged** (e.g. the sync writes into Internal): first add a dedupe fallback (same `Event date` + same name), because URLs differ between trackers (e.g. Ripple Effects Mapping: luma.com in Test, givebutter in Internal).
 
-**Fill Notion's `Place` column so the Map view works (next up).** Test against Event Tracker Test first, then `LIMIT=1` against production. The Map view only reads Place-type columns, never text, so `Location` doesn't show up. The Notion API accepts `{ place: { lat, lon, name, address } }` but doesn't geocode, and `events.json` already has `geo: { lat, lng }`. Plan: in `mapEventToNotionProperties`, write Place when `event.geo` exists (name = address text before the first comma). Caveats: some geocodes fall back to city level, so pins can be approximate; this only affects new rows (create-only); confirm with a `LIMIT=1` test that `NOTION_VERSION` 2022-06-28 accepts `place`.
+**Place column (code written 2026-11-12, testing):** `mapPlace` in `sync-notion.js` writes `{ place: { lat, lon, name, address } }` (name = address text before the first comma). Still to confirm with a `LIMIT=1` live test against Event Tracker Test that `NOTION_VERSION` 2022-06-28 accepts `place`. Only new rows get Place (create-only). **Existing rows: the team fills Place by hand for now (Brett's decision 2026-11-12).** Maybe later: ask Natalie to tick "Update content" on the existing integration (same token, no new secret needed), then build a one-time "fill empty Place cells" workflow like the backfill (dry run → limit 1 → all; only empty cells, only exact pins).
 
 ## Working with Brett
 

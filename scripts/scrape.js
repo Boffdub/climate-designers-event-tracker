@@ -73,6 +73,15 @@ function normalizeLumaEvent(entry, chapter) {
     event.location_type === 'online'
       ? 'Virtual'
       : (address && (address.full_address || address.address)) || null;
+  // Luma's own venue pin (what its event-page map shows). Far more precise than
+  // geocoding the address text, which can fall back to a city-center guess.
+  const coord = event.coordinate;
+  const lat = coord && Number(coord.latitude);
+  const lng = coord && Number(coord.longitude);
+  const geo =
+    location && location !== 'Virtual' && Number.isFinite(lat) && Number.isFinite(lng)
+      ? { lat, lng }
+      : undefined;
 
   return {
     chapter: chapter.name,
@@ -83,6 +92,7 @@ function normalizeLumaEvent(entry, chapter) {
     timezone: event.timezone,
     coverUrl: event.cover_url || null, 
     location,
+    geo,
     url: `https://luma.com/${event.url}`,
     source: 'luma',
     hosts: entryHostNames(entry),
@@ -400,13 +410,18 @@ async function geocodeEvents(events) {
 
   for (const event of events) {
     if (!event.location || event.location === 'Virtual') continue;
-    if (event.geo) continue; // platform already gave exact coordinates (Humanitix, Peatix)
+    if (event.geo) continue; // platform already gave exact coordinates (all sources usually do)
 
     if (!(event.location in cache)) {
       cache[event.location] = await geocodeAddress(event.location);
       cacheDirty = true;
     }
-    event.geo = cache[event.location];
+    if (cache[event.location]) {
+      // Geocoded from address text: may be a city-center fallback. The Notion sync
+      // leaves Place blank for these rather than risk a plausible-looking wrong pin.
+      event.geo = cache[event.location];
+      event.geoApproximate = true;
+    }
   }
 
   if (cacheDirty) {

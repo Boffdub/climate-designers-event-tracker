@@ -1,29 +1,76 @@
 let allEvents = [];
-let calendar = null;
-let map = null;
-let markersLayer = null;
 
-const tableBody = document.getElementById('table-body');
-const noEvents = document.getElementById('no-events');
+const upcomingList = document.getElementById('upcoming-list');
+const pastList = document.getElementById('past-list');
 const regionFilter = document.getElementById('filter-region');
 const chapterFilter = document.getElementById('filter-chapter');
-const timeFilter = document.getElementById('filter-time');
 
-function regionClass(region) {
-  return 'region-' + region.toLowerCase().replace(/\s+/g, '-');
+function formatTimeRange(startAt, endAt, timezone) {
+  const opts = { hour: 'numeric', minute: '2-digit', timeZone: timezone || undefined };
+  const start = new Date(startAt).toLocaleTimeString('en-US', opts);
+  if (!endAt) return start;
+  const end = new Date(endAt).toLocaleTimeString('en-US', opts);
+  return `${start} – ${end}`;
 }
 
-function formatDate(isoString, timezone) {
-  if (!isoString) return '—';
-  try {
-    return new Date(isoString).toLocaleString('en-US', {
-      dateStyle: 'medium',
-      timeStyle: 'short',
+function formatMonthDay(startAt, timezone) {
+  const month = new Date(startAt)
+    .toLocaleString('en-US', {
+      month: 'short',
       timeZone: timezone || undefined,
-    });
-  } catch {
-    return new Date(isoString).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-  }
+    })
+    .toUpperCase();
+  const day = new Date(startAt).toLocaleString('en-US', {
+    day: 'numeric',
+    timeZone: timezone || undefined,
+  });
+  return { month, day };
+}
+
+function chapterGradient(chapter) {
+  const map = {
+    'Bay Area': 'var(--bay-area-chapter)',
+    Bengaluru: 'var(--bengaluru-chapter)',
+    Boston: 'var(--boston-chapter)',
+    Chicago: 'var(--chicago-chapter)',
+    Dubai: 'var(--dubai-chapter)',
+    Japan: 'var(--japan-chapter)',
+    'Los Angeles': 'var(--los-angeles-chapter)',
+    Milan: 'var(--milan-chapter)',
+    'New York City': 'var(--new-york-chapter)',
+    Seattle: 'var(--seattle-chapter)',
+    Singapore: 'var(--singapore-chapter)',
+    Toronto: 'var(--toronto-chapter)',
+  };
+  return map[chapter] || 'var(--new-york-chapter)';
+}
+
+function eventCardHtml(e) {
+  const { month, day } = formatMonthDay(e.startAt, e.timezone);
+  const time = formatTimeRange(e.startAt, e.endAt, e.timezone);
+  const location = e.location || 'Register to see address';
+  const gradient = chapterGradient(e.chapter);
+
+  const thumbStyle = e.coverUrl
+    ? `style="background-image: url('${e.coverUrl}')"`
+    : '';
+
+  return `
+    <a class="event-card" href="${e.url}" target="_blank" rel="noopener"
+       style="background: ${gradient}">
+      <div class="event-thumb" ${thumbStyle}></div>
+      <div class="event-info">
+        <h3 class="event-title">${e.name}</h3>
+        <p class="event-chapter">${e.chapter} Chapter</p>
+        <p class="event-meta">${time}</p>
+        <p class="event-meta">${location}</p>
+      </div>
+      <div class="event-date">
+        <span class="month">${month}</span>
+        <span class="day">${day}</span>
+      </div>
+    </a>
+  `;
 }
 
 function populateFilters(events) {
@@ -45,161 +92,123 @@ function populateFilters(events) {
   }
 }
 
+function renderList() {
+  const now = new Date();
+  const filtered = getFilteredEvents();
+
+  const upcoming = filtered
+    .filter((e) => new Date(e.startAt) >= now)
+    .sort((a, b) => new Date(a.startAt) - new Date(b.startAt));
+
+  const past = filtered
+    .filter((e) => new Date(e.startAt) < now)
+    .sort((a, b) => new Date(b.startAt) - new Date(a.startAt));
+
+  upcomingList.innerHTML = upcoming.map(eventCardHtml).join('');
+  pastList.innerHTML = past.map(eventCardHtml).join('');
+}
+
+const listView = document.getElementById('list-view');
+const calendarView = document.getElementById('calendar-view');
+const btnTable = document.getElementById('btn-table');
+const btnCalendar = document.getElementById('btn-calendar');
+
+function showListView() {
+  listView.hidden = false;
+  calendarView.hidden = true;
+  btnTable.classList.add('active');
+  btnCalendar.classList.remove('active');
+  renderList();
+}
+
+function showCalendarView() {
+  listView.hidden = true;
+  calendarView.hidden = false;
+  btnTable.classList.remove('active');
+  btnCalendar.classList.add('active');
+  calendar.updateSize();
+  renderCalendar();
+
+  const todayCell = calendarEl.querySelector('.fc-day-today');
+  if (todayCell) {
+    todayCell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+btnTable.addEventListener('click', showListView);
+btnCalendar.addEventListener('click', showCalendarView);
+
+[regionFilter, chapterFilter].forEach((el) =>
+  el.addEventListener('change', () => {
+    renderList();
+    renderCalendar();
+  })
+);
+
+const calendarEl = document.getElementById('calendar');
+let calendar = null;
+
 function getFilteredEvents() {
   const region = regionFilter.value;
   const chapter = chapterFilter.value;
-  const time = timeFilter.value;
-  const now = new Date();
-
   return allEvents.filter((e) => {
     if (region && e.region !== region) return false;
     if (chapter && e.chapter !== chapter) return false;
-    if (time === 'upcoming' && new Date(e.startAt) < now) return false;
-    if (time === 'past' && new Date(e.startAt) >= now) return false;
     return true;
   });
 }
 
-function renderTable() {
-  const events = getFilteredEvents();
-  tableBody.innerHTML = '';
-
-  if (events.length === 0) {
-    noEvents.hidden = false;
-    return;
-  }
-  noEvents.hidden = true;
-
-  for (const e of events) {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td><a href="${e.url}" target="_blank" rel="noopener">${e.name}</a></td>
-      <td>${e.chapter}</td>
-      <td><span class="region-tag ${regionClass(e.region)}">${e.region}</span></td>
-      <td>${formatDate(e.startAt, e.timezone)}</td>
-      <td>${e.location || '—'}</td>
-    `;
-    tableBody.appendChild(row);
-  }
-}
-
 function renderCalendar() {
-  const events = getFilteredEvents().map((e) => ({
-    title: `${e.chapter}: ${e.name}`,
+  const fcEvents = getFilteredEvents().map((e) => ({
+    title: e.name,
     start: e.startAt,
     end: e.endAt,
-    url: e.url,
+    extendedProps: {
+      coverUrl: e.coverUrl,
+      chapter: e.chapter,
+      url: e.url,
+    },
   }));
 
-  if (!calendar) {
-    const el = document.getElementById('calendar');
-    calendar = new FullCalendar.Calendar(el, {
-      initialView: 'dayGridMonth',
-      height: 'auto',
-      dayMaxEvents: true,
-      eventDisplay: 'block',
-      events,
-      eventClick(info) {
-        info.jsEvent.preventDefault();
-        window.open(info.event.url, '_blank', 'noopener');
-      },
-    });
-    calendar.render();
-  } else {
-    calendar.removeAllEvents();
-    calendar.addEventSource(events);
-  }
+  calendar.removeAllEvents();
+  calendar.addEventSource(fcEvents);
 }
 
-function renderMap() {
-  const events = getFilteredEvents().filter((e) => e.geo);
-  const noLocatedEvents = document.getElementById('no-located-events');
+function initCalendar() {
+  calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    events: [],
+    eventContent: function (arg) {
+      const props = arg.event.extendedProps;
+      const thumbStyle = props.coverUrl
+        ? `style="background-image: url('${props.coverUrl}')"`
+        : '';
+      const gradient = chapterGradient(props.chapter);
 
-  if (!map) {
-    map = L.map('map');
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19,
-    }).addTo(map);
-    markersLayer = L.layerGroup().addTo(map);
-  }
-
-  markersLayer.clearLayers();
-
-  if (events.length === 0) {
-    noLocatedEvents.hidden = false;
-    map.setView([20, 0], 2);
-    return;
-  }
-  noLocatedEvents.hidden = true;
-
-  // Group events at (near) the same coordinates so overlapping venues share one marker.
-  const groups = new Map();
-  for (const e of events) {
-    const key = `${e.geo.lat.toFixed(4)},${e.geo.lng.toFixed(4)}`;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(e);
-  }
-
-  const bounds = [];
-  for (const [, groupEvents] of groups) {
-    const { lat, lng } = groupEvents[0].geo;
-    bounds.push([lat, lng]);
-
-    const popupHtml = `<div class="map-popup">${groupEvents
-      .map(
-        (e) => `
-          <div class="map-popup-event">
-            <a href="${e.url}" target="_blank" rel="noopener">${e.name}</a><br>
-            <span class="map-popup-meta">${e.chapter} · ${formatDate(e.startAt, e.timezone)}</span>
-          </div>`
-      )
-      .join('')}</div>`;
-
-    L.marker([lat, lng]).addTo(markersLayer).bindPopup(popupHtml);
-  }
-
-  map.fitBounds(bounds, { padding: [24, 24], maxZoom: 14 });
-
-  // Leaflet needs a resize nudge the first time its container becomes visible.
-  setTimeout(() => map.invalidateSize(), 0);
+      return {
+        html: `
+          <div class="fc-event-custom" style="background: ${gradient}">
+            <div class="fc-event-thumb" ${thumbStyle}></div>
+            <span class="fc-event-title">${arg.event.title}</span>
+          </div>
+        `,
+      };
+    },
+    eventClick: function (info) {
+      info.jsEvent.preventDefault();
+      window.open(info.event.extendedProps.url, '_blank', 'noopener');
+    },
+  });
+  calendar.render();
 }
 
-function renderFlagged(flaggedChapters) {
-  const list = document.getElementById('flagged-list');
-  list.innerHTML = '';
-  for (const c of flaggedChapters) {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      <span class="chapter-name">${c.name} <span class="region-tag">${c.region}</span></span>
-      <span class="reason">${c.reason}</span>
-    `;
-    list.appendChild(li);
-  }
-}
 
-const views = {
-  table: { section: 'table-view', button: 'btn-table', render: renderTable },
-  calendar: { section: 'calendar-view', button: 'btn-calendar', render: renderCalendar },
-  map: { section: 'map-view', button: 'btn-map', render: renderMap },
-};
-let activeView = 'table';
-
-function switchView(view) {
-  activeView = view;
-  for (const [name, { section, button }] of Object.entries(views)) {
-    document.getElementById(section).hidden = name !== view;
-    document.getElementById(button).classList.toggle('active', name === view);
-  }
-  views[view].render();
-}
-
-Object.entries(views).forEach(([name, { button }]) =>
-  document.getElementById(button).addEventListener('click', () => switchView(name))
-);
-[regionFilter, chapterFilter, timeFilter].forEach((el) =>
-  el.addEventListener('change', () => switchView(activeView))
-);
+document.querySelectorAll('.chevron').forEach((chevron) => {
+  chevron.addEventListener('click', (e) => {
+    e.stopPropagation();
+    chevron.closest('.event-group').classList.toggle('open');
+  });
+});
 
 async function init() {
   const res = await fetch('data/events.json');
@@ -212,8 +221,8 @@ async function init() {
   });
 
   populateFilters(allEvents);
-  renderFlagged(data.flaggedChapters);
-  switchView('table');
+  renderList();
+  initCalendar();
 }
 
 init();
